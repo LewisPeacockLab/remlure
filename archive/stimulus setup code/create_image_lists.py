@@ -28,8 +28,8 @@ mainTask = {}
 for category in categories:
     all_paths = image_paths[category]
 
-    # Randomly select 19 images
-    selected = random.sample(all_paths, 19)
+    # Randomly select 20 images
+    selected = random.sample(all_paths, 20)
 
     # Add to new list
     mainTask[f"{category}_mainTask"] = selected
