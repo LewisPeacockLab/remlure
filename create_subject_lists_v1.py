@@ -200,9 +200,41 @@ def find_replace_cat(row):
 
 mainTask_df["replace_cat"] = mainTask_df.apply(find_replace_cat, axis=1)
 
+# set cue location
+mainTask_cue_loc = (["left" for i in range(1)] + ["right" for i in range(1)]) * 72
+mainTask_df["cue_position"] = mainTask_cue_loc
+
 # set probe types
+mainTask_probeType = (
+    # run 1
+    ["match" for i in range(12)]
+    + ["non-match" for i in range(12)]
+    # run 2
+    + ["match" for i in range(6)]
+    + ["non-match" for i in range(12)]
+    + ["match" for i in range(6)]
+    # run 3
+    + ["non-match" for i in range(12)]
+    + ["match" for i in range(12)]
+) * 2
+mainTask_df["probe_type"] = mainTask_probeType
 
-
+# set cue sub-type
+mainTask_cue_subType = (
+    ["cued" for i in range(2)]  # maintain
+    + ["uncued" for i in range(2)]  # suppress
+    + ["replace_cue_img" for i in range(2)]  # replace
+    + ["uncued" for i in range(2)]  # maintain
+    + ["uncued" for i in range(2)]  # suppress
+    + ["uncued" for i in range(2)]  # replace
+    + ["novel" for i in range(2)]  # maintain
+    + ["suppressed_img" for i in range(2)]  # suppress
+    + ["replacued_img_lure" for i in range(2)]  # replace
+    + ["novel" for i in range(2)]  # maintain
+    + ["novel" for i in range(2)]  # suppress
+    + ["novel" for i in range(2)]  # replace
+) * 6
+mainTask_df["probe_subType"] = mainTask_cue_subType
 # set run number
 mainTask_run_num = (
     [1 for i in range(24)]
@@ -219,4 +251,6 @@ mainTask_trial_num = list(range(1, 25)) * 6
 mainTask_df["trial_num"] = mainTask_trial_num
 
 # benchmark
-mainTask_df.to_csv("/Users/cnj678/Desktop/remlure_mainTask_benchmark.csv", index=False)
+mainTask_df.to_csv(
+    "/Users/cnj678/Desktop/remlure_mainTask_benchmark_v2.csv", index=False
+)
