@@ -7,9 +7,14 @@ import os
 # Set participant number
 # need this to create a folder with each subs design matrix
 participant_number = "test"  # Edward, if you put this code in PsychoPy this would need to be changed to refelect the expInfo
+# expInfo['participant']
 
 # set directory path
-_thisDir = os.path.dirname(os.path.abspath(__file__))
+try:
+    _thisDir = os.path.dirname(os.path.abspath(__file__))
+except NameError:
+    print("__file__ does not exist")
+    _thisDir = os.getcwd()
 
 # create a subject specific folder to save all lists
 list_foldername = os.path.join(_thisDir, "subject lists", f"sub-{participant_number}")
@@ -111,13 +116,13 @@ fruits_novel_list_infile = (
 )
 
 # open stimulus mater files
-faces_mainTask_inbook = pd.read_csv(faces_mainTask_list_infile)
-places_mainTask_inbook = pd.read_csv(places_mainTask_list_infile)
-fruits_mainTask_inbook = pd.read_csv(fruits_mainTask_list_infile)
+faces_mainTask_inbook = pd.read_csv(faces_mainTask_list_infile)    # 19 count
+places_mainTask_inbook = pd.read_csv(places_mainTask_list_infile)    # 19 count
+fruits_mainTask_inbook = pd.read_csv(fruits_mainTask_list_infile)     # 19 count
 
-faces_novel_inbook = pd.read_csv(faces_novel_list_infile)
-places_novel_inbook = pd.read_csv(places_novel_list_infile)
-fruits_novel_inbook = pd.read_csv(fruits_novel_list_infile)
+faces_novel_inbook = pd.read_csv(faces_novel_list_infile)    # 76 count
+places_novel_inbook = pd.read_csv(places_novel_list_infile)    # 74 count
+fruits_novel_inbook = pd.read_csv(fruits_novel_list_infile)    # 76 count
 
 # load the lists
 faces_mainTask_list = []
@@ -145,6 +150,11 @@ for _, row in fruits_novel_inbook.iterrows():
     fruits_novel_list.append(row.tolist())
 
 #### CREATE MAIN TASK LISTS ####
+# Define some experiment variables
+run_len = 24    # trials per run
+num_runs = 6    # number of runs
+num_oper_per_run = run_len // 3    # 3 operations
+
 # create the encoding category labels for item 1 (left of screen) and item 2 (right of screen)
 encode_1_cat = (
     ["faces"] * 4
@@ -219,22 +229,29 @@ mainTask_probeType = (
 ) * 2
 mainTask_df["probe_type"] = mainTask_probeType
 
-# set cue sub-type
-mainTask_cue_subType = (
-    ["cued" for i in range(2)]  # maintain
-    + ["uncued" for i in range(2)]  # suppress
-    + ["replace_cue_img" for i in range(2)]  # replace
-    + ["uncued" for i in range(2)]  # maintain
-    + ["uncued" for i in range(2)]  # suppress
-    + ["uncued" for i in range(2)]  # replace
-    + ["novel" for i in range(2)]  # maintain
-    + ["suppressed_img" for i in range(2)]  # suppress
-    + ["replacued_img_lure" for i in range(2)]  # replace
-    + ["novel" for i in range(2)]  # maintain
-    + ["novel" for i in range(2)]  # suppress
-    + ["novel" for i in range(2)]  # replace
-) * 6
-mainTask_df["probe_subType"] = mainTask_cue_subType
+# set probe sub-type
+maintain_probes = ["cued", "uncued", "novel", "novel"]
+replace_probes = ["lure", "replacement", "uncued", "novel"]
+suppress_probes = ["lure", "uncued", "uncued", "novel"]
+# iterate through dataframe to add probe_subtypes
+probe_subType = []
+for i, row in mainTask_df.iterrows():
+    # print(i)
+    if row["trial_num"] == 1:
+        # num_probes * (run_len // (num_probes * num_operations))
+        run_maintain_probes = np.random.permutation(maintain_probes * (num_oper_per_run // len(maintain_probes))).tolist()
+        run_replace_probes = np.random.permutation(replace_probes * (num_oper_per_run // len(replace_probes))).tolist()
+        run_suppress_probes = np.random.permutation(suppress_probes * (num_oper_per_run // len(suppress_probes))).tolist()
+    if row["operation"] == "maintain":
+        probe_subType.append(run_maintain_probes.pop())
+    elif row["operation"] == "replace":
+        probe_subType.append(run_replace_probes.pop())
+    elif row["operation"] == "suppress":
+        probe_subType.append(run_suppress_probes.pop())
+# add column to dataframe
+mainTask_df["probe_subType"] = probe_subType
+
+
 # set run number
 mainTask_run_num = (
     [1 for i in range(24)]
@@ -250,7 +267,26 @@ mainTask_df["run_num"] = mainTask_run_num
 mainTask_trial_num = list(range(1, 25)) * 6
 mainTask_df["trial_num"] = mainTask_trial_num
 
+# Add jitter, randomized within run
+jitter = []
+for i in range(num_runs):
+    jitter += np.random.permutation([3, 4, 5] * int(run_len / 3)).tolist()
+mainTask_df["jitter"] = jitter
+
+# Add rest trigger
+mainTask_df["rest_trigger"] = [int(r.trial_num == run_len) for _, r in mainTask_df.iterrows()]
+
+# Assign stim to trials
+stims_dict = {}
+# create dictionary for each operation
+for oper in ["maintain", "suppress", "replace"]:
+    stims_dict[oper] = {"face": np.random.permutation(faces_mainTask_list).tolist(),
+                        "places": np.random.permutation(places_mainTask_list).tolist(),
+                        "fruits": np.random.permutation(fruits_mainTask_list).tolist(),}
+#
+
 # benchmark
 mainTask_df.to_csv(
-    "/Users/cnj678/Desktop/remlure_mainTask_benchmark_v2.csv", index=False
+    f"{_thisDir}/remlure_mainTask_benchmark_v2.csv", index=False
 )
+
