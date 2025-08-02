@@ -241,37 +241,45 @@ mainTask_df["jitter"] = jitter
 mainTask_df["rest_trigger"] = [int(r.trial_num == run_len) for _, r in mainTask_df.iterrows()]
 
 ## Select stims for each trial
-def select_stim(probecounter, crs_list, allstims, reverse=False, skip=0, shuffle=False):
-    timesprobed_sorted = [l[0] for l in sorted(probecounter.items(), key=lambda item: item[1])]
-
-    t = 0
-    if skip > 0:
-        sortedstims = sortedstims * skip
-    if shuffle:
-        sortedstims = np.random.permutation(sortedstims).tolist()
+def select_stim(probecounter, crs_list, stimsdict, useprobe=True,
+                oper=None, cuestatus=None, imgcat=None, reverse=False,):
     # Iterate through the sorted stim list (sorted by number of times used as probe)
-    for probecount in np.unique(list(probecounter.values())):
-        sortedstims = [k for k,v in probecounter.items() if v == probecount]
-        for s in sortedstims:
-            # find if sim is in current category and if stim has been used in current run
-            if s not in crs_list and s in allstims:
-                if t == skip:
-                    allstims.remove(s)    # remove stim from stims dict
+    # initiate a counter for the entire stimsdict
+    counter = Counter()
+    for o in stimsdict:
+        for p in stimsdict[o]:
+            for c in stimsdict[o][p]:
+                counter.update(stimsdict[o][p][c])
+    # subselect viable list (stim in current condition dict) then sort from most common to least commonly used
+    viable_list = [sv for sv in counter.most_common() if sv[0] in stimsdict[oper][cuestatus][imgcat]]
+    # iterate from least common to most common
+    for value in np.unique([v for _, v in viable_list]):
+        # Subselect stims matching the used-value
+        stims = [s[0] for s in viable_list if s[1] == value]
+        if useprobe:
+            # Sort stims based on number of times probed
+            sortedstims = [k for k in sorted(probecounter.items(), key=lambda x:x[1]) if k[0] in stims]
+            if reverse:
+                sortedstims.reverse()
+        else:
+            sortedstims = np.random.permutation(stims)
+        # iterate and pull stim
+        if useprobe:
+            for val in np.unique([k[1] for k in sortedstims]):
+                substims = np.random.permutation([k[0] for k in sortedstims if k[1] == val])
+                for s in substims:
+                    if s not in crs_list:
+                        stimsdict[oper][cuestatus][imgcat].remove(s)    # remove stim from stims dict
+                        crs_list.append(s)  # add stim to current run stims
+                        return s
+        else:
+            for s in sortedstims:
+                # find if sim is in current category and if stim has been used in current run
+                if s not in crs_list:
+                    stimsdict[oper][cuestatus][imgcat].remove(s)    # remove stim from stims dict
                     crs_list.append(s)    # add stim to current run stims
                     return s
-                else:
-                    t += 1
     print("No stimuli selected")
-    viable_list = [s for s in allstims if s not in crs_list]
-    print("viable_list = ", viable_list)
-    if len(viable_list) == 0:
-        print("all_stims = ", allstims)
-    if all([s in crs_list for s in allstims]):
-        print("failed crs")
-    if all([s not in sortedstims for s in allstims]):
-        print("failed allstims")
-    # print(allstims)
-    # print(crs_list)
     return None
 
 def check_trials(imglist: list, numtrials: int):
@@ -280,12 +288,15 @@ def check_trials(imglist: list, numtrials: int):
     """
     return len([i["left"] for i in imglist if i["left"] is not None]) == numtrials and \
         len([i["right"] for i in imglist if i["right"] is not None]) == numtrials and \
-        len([i["replacement"] for i in imglist if i["replacement"] is not None]) == (numtrials // 3) and \
+        len([i["replacement"] for i in imglist if i["replacement"] is not None]) == numtrials and \
         len([i["probe"] for i in imglist if i["probe"] is not None]) == numtrials
 
 
 # initiate a list to store the stims
 check = False
+# Set the operation cue images
+opcue_dict = {"maintain": "stimuli/cues/maintain_cue_image.png",
+              "suppress": "stimuli/cues/suppress_cue_image.png",}
 # Build the lists
 while not check:
     # Assign stim to trials
@@ -315,8 +326,10 @@ while not check:
         df = mainTask_df[mainTask_df["run_num"] == run]
         # Loop until run has completed building
         run_check = False
-        skip = 0
-        shuffle = False
+        t = 0
+        # Try to use probe as much as possible
+        print("now using probe counter")
+        useprobe = True
         while not run_check:
             random.seed()
             # initiate a run specific image list
@@ -347,25 +360,20 @@ while not check:
                         imgcat = r.encode_2_cat
                     elif imgnum == "replacement":
                         if r.operation != "replace":
-                            images_dict["replacement"] = None
+                            images_dict["replacement"] = opcue_dict[r.operation]
                             continue
                         else:
                             imgcat = r.replace_cat
-                    # Create sorted lists of stims based on number of times probed
-                    if imgnum == probe_pos:
-                        timesprobed_sorted = [l[0] for l in sorted(run_timesprobed_counter.items(), key=lambda item: item[1])]
-                    else:
-                        timesprobed_sorted = [l[0] for l in sorted(run_timesprobed_counter.items(), key=lambda item: item[1])]
-                        timesprobed_sorted.reverse()
                     # determine cue status for image
                     cue_status = "replacement" if imgnum == "replacement" else ("uncued", "cued")[r.cue_position == imgnum]
                     # select the image
-                    img = select_stim(run_timesprobed_counter, current_run_stims, run_stims_dict[r.operation][cue_status][imgcat], skip=skip, shuffle=shuffle)
-                    # For debugging:
-                    if img is None:
-                        print(run)
-                        print(i)
-                        print(len(current_run_stims))
+                    # Create sorted lists of stims based on number of times probed
+                    if imgnum == probe_pos:
+                        img = select_stim(run_timesprobed_counter, current_run_stims, run_stims_dict, useprobe=useprobe,
+                                          oper=r.operation, cuestatus=cue_status, imgcat=imgcat, reverse=False)
+                    else:
+                        img = select_stim(run_timesprobed_counter, current_run_stims, run_stims_dict, useprobe=useprobe,
+                                          oper=r.operation, cuestatus=cue_status, imgcat=imgcat, reverse=True)
                     # Save the image into the dict
                     images_dict[imgnum] = img
                 # Select a probe image
@@ -383,20 +391,19 @@ while not check:
 
             # Perform a check for the run
             run_check = check_trials(run_image_list, run_len)
-            # add skip
-            skip += 1
-            shuffle = True
+            print("run = ", run)
             print("runcheck = ", run_check)
-            print("skip = ", skip)
-            print("shuffle = ", shuffle)
-            if skip > 1:
+            t += 1
+            if t > 5:
+                print("now turning useprobe to False")
+                useprobe = False
+            elif t > 10:
                 break
         # If run passes check, overwrite all ongoing saves onto counters/lists
         image_list += run_image_list
         timesprobed_counter = run_timesprobed_counter
         stims_dict = run_stims_dict
         novel_stims_dict = run_novel_stims_dict
-
     if len(image_list) == total_trials:
         print("completed build, now checking")
         check = check_trials(image_list, total_trials)
@@ -410,10 +417,12 @@ mainTask_df["encode_2_img"] = [i["right"] for i in image_list]
 mainTask_df["replace_img"] = [i["replacement"] for i in image_list]
 mainTask_df["probe_img"] = [i["probe"] for i in image_list]
 
-
-
 # benchmark
 mainTask_df.to_csv(
-    f"{_thisDir}/remlure_mainTask_benchmark_v3.csv", index=False
+    f"{_thisDir}/remlure_mainTask_benchmark_v1.csv", index=False
 )
 
+# Save to maintask folder
+# mainTask_df.to_csv(
+#     f"{list_foldername}/main_task/main_stim_list.csv", index=False
+# )
