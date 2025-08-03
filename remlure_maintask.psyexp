@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="2024.2.2">
+  <Settings>
+    <Param val="3" valType="str" updates="None" name="Audio latency priority"/>
+    <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
+    <Param val="" valType="str" updates="None" name="Completed URL"/>
+    <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
+    <Param val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code" updates="None" name="Data filename"/>
+    <Param val="True" valType="bool" updates="None" name="Enable Escape"/>
+    <Param val="Thank you for your patience." valType="str" updates="None" name="End Message"/>
+    <Param val="{'participant': '', 'phase': 'maintask'}" valType="code" updates="None" name="Experiment info"/>
+    <Param val="True" valType="bool" updates="None" name="Force stereo"/>
+    <Param val="True" valType="bool" updates="None" name="Full-screen window"/>
+    <Param val="" valType="str" updates="None" name="HTML path"/>
+    <Param val="" valType="str" updates="None" name="Incomplete URL"/>
+    <Param val="testMonitor" valType="str" updates="None" name="Monitor"/>
+    <Param val="[]" valType="list" updates="None" name="Resources"/>
+    <Param val="False" valType="bool" updates="None" name="Save csv file"/>
+    <Param val="False" valType="bool" updates="None" name="Save excel file"/>
+    <Param val="False" valType="bool" updates="None" name="Save hdf5 file"/>
+    <Param val="True" valType="bool" updates="None" name="Save log file"/>
+    <Param val="True" valType="bool" updates="None" name="Save psydat file"/>
+    <Param val="True" valType="bool" updates="None" name="Save wide csv file"/>
+    <Param val="1" valType="num" updates="None" name="Screen"/>
+    <Param val="True" valType="bool" updates="None" name="Show info dlg"/>
+    <Param val="False" valType="bool" updates="None" name="Show mouse"/>
+    <Param val="height" valType="str" updates="None" name="Units"/>
+    <Param val="" valType="str" updates="None" name="Use version"/>
+    <Param val="[1512, 982]" valType="list" updates="None" name="Window size (pixels)"/>
+    <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+    <Param val="" valType="str" updates="None" name="backgroundImg"/>
+    <Param val="avg" valType="str" updates="None" name="blendMode"/>
+    <Param val="float" valType="str" updates="None" name="clockFormat"/>
+    <Param val="{'thisRow.t': 'priority.CRITICAL', 'expName': 'priority.LOW'}" valType="dict" updates="None" name="colPriority"/>
+    <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+    <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+    <Param val="warning" valType="code" updates="None" name="consoleLoggingLevel"/>
+    <Param val="default" valType="str" updates="None" name="ecSampleRate"/>
+    <Param val="100.1.1.1" valType="str" updates="None" name="elAddress"/>
+    <Param val="FILTER_LEVEL_2" valType="str" updates="None" name="elDataFiltering"/>
+    <Param val="FILTER_LEVEL_OFF" valType="str" updates="None" name="elLiveFiltering"/>
+    <Param val="EYELINK 1000 DESKTOP" valType="str" updates="None" name="elModel"/>
+    <Param val="ELLIPSE_FIT" valType="str" updates="None" name="elPupilAlgorithm"/>
+    <Param val="PUPIL_AREA" valType="str" updates="None" name="elPupilMeasure"/>
+    <Param val="1000" valType="num" updates="None" name="elSampleRate"/>
+    <Param val="False" valType="bool" updates="None" name="elSimMode"/>
+    <Param val="RIGHT_EYE" valType="str" updates="None" name="elTrackEyes"/>
+    <Param val="PUPIL_CR_TRACKING" valType="str" updates="None" name="elTrackingMode"/>
+    <Param val="remlure_maintask" valType="str" updates="None" name="expName"/>
+    <Param val="on Sync" valType="str" updates="None" name="exportHTML"/>
+    <Param val="None" valType="str" updates="None" name="eyetracker"/>
+    <Param val="" valType="code" updates="None" name="frameRate"/>
+    <Param val="Attempting to measure frame rate of screen, please wait..." valType="str" updates="None" name="frameRateMsg"/>
+    <Param val="127.0.0.1" valType="str" updates="None" name="gpAddress"/>
+    <Param val="4242" valType="num" updates="None" name="gpPort"/>
+    <Param val="PsychToolbox" valType="str" updates="None" name="keyboardBackend"/>
+    <Param val="info" valType="code" updates="None" name="logging level"/>
+    <Param val="True" valType="bool" updates="None" name="measureFrameRate"/>
+    <Param val="('MIDDLE_BUTTON',)" valType="list" updates="None" name="mgBlink"/>
+    <Param val="CONTINUOUS" valType="str" updates="None" name="mgMove"/>
+    <Param val="0.5" valType="num" updates="None" name="mgSaccade"/>
+    <Param val="neon.local" valType="str" updates="None" name="plCompanionAddress"/>
+    <Param val="8080" valType="num" updates="None" name="plCompanionPort"/>
+    <Param val="True" valType="bool" updates="None" name="plCompanionRecordingEnabled"/>
+    <Param val="0.6" valType="num" updates="None" name="plConfidenceThreshold"/>
+    <Param val="True" valType="bool" updates="None" name="plPupilCaptureRecordingEnabled"/>
+    <Param val="" valType="str" updates="None" name="plPupilCaptureRecordingLocation"/>
+    <Param val="127.0.0.1" valType="str" updates="None" name="plPupilRemoteAddress"/>
+    <Param val="50020" valType="num" updates="None" name="plPupilRemotePort"/>
+    <Param val="1000" valType="num" updates="None" name="plPupilRemoteTimeoutMs"/>
+    <Param val="False" valType="bool" updates="None" name="plPupillometryOnly"/>
+    <Param val="psychopy_iohub_surface" valType="str" updates="None" name="plSurfaceName"/>
+    <Param val="0" valType="code" updates="None" name="runMode"/>
+    <Param val="False" valType="bool" updates="None" name="rush"/>
+    <Param val="time" valType="str" updates="None" name="sortColumns"/>
+    <Param val="" valType="str" updates="None" name="tbLicenseFile"/>
+    <Param val="" valType="str" updates="None" name="tbModel"/>
+    <Param val="60" valType="num" updates="None" name="tbSampleRate"/>
+    <Param val="" valType="str" updates="None" name="tbSerialNo"/>
+    <Param val="pyglet" valType="str" updates="None" name="winBackend"/>
+  </Settings>
+  <Routines>
+    <Routine name="Encode">
+      <RoutineSettingsComponent name="Encode" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="Encode" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <PolygonComponent name="encode_fixation" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="dimgray" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="dimgray" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="encode_fixation" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="(0.03, 0.03)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <ImageComponent name="img_1_left" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
+        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
+        <Param val="$encode_1_img" valType="file" updates="set every repeat" name="image"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="" valType="str" updates="constant" name="mask"/>
+        <Param val="img_1_left" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(-0.3, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="(0.5, 0.5)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+      </ImageComponent>
+      <ImageComponent name="img_2_right" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
+        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
+        <Param val="$encode_2_img" valType="file" updates="set every repeat" name="image"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="" valType="str" updates="constant" name="mask"/>
+        <Param val="img_2_right" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0.3, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="(0.5, 0.5)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+      </ImageComponent>
+    </Routine>
+    <Routine name="Manipulate">
+      <RoutineSettingsComponent name="Manipulate" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="Manipulate" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="cue_position_code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="if ((cue_position === &quot;left&quot;)) {&amp;#10;    cuepos = [(- 0.3), 0];&amp;#10;} else {&amp;#10;    if ((cue_position === &quot;right&quot;)) {&amp;#10;        cuepos = [0.3, 0];&amp;#10;    }&amp;#10;}&amp;#10;console.log(&quot;cue_position = &quot;, cue_position);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="if cue_position == &quot;left&quot;:&amp;#10;    cuepos = (-0.3, 0)&amp;#10;elif cue_position == &quot;right&quot;:&amp;#10;    cuepos = (0.3, 0)&amp;#10;print(&quot;cue_position = &quot;, cue_position)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="cue_position_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <ImageComponent name="manipulate_cue" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
+        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
+        <Param val="$replace_img" valType="file" updates="set every repeat" name="image"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="" valType="str" updates="constant" name="mask"/>
+        <Param val="manipulate_cue" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="cuepos" valType="list" updates="set every repeat" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="(0.5, 0.5)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+      </ImageComponent>
+      <PolygonComponent name="manipulate_fixation" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="dimgray" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="dimgray" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="manipulate_fixation" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="(0.03, 0.03)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+    </Routine>
+    <Routine name="Probe">
+      <RoutineSettingsComponent name="Probe" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="Probe" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <ImageComponent name="probe_image" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="flipHoriz"/>
+        <Param val="False" valType="bool" updates="constant" name="flipVert"/>
+        <Param val="$probe_img" valType="file" updates="set every repeat" name="image"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="" valType="str" updates="constant" name="mask"/>
+        <Param val="probe_image" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="(0.5, 0.5)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="128" valType="num" updates="constant" name="texture resolution"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+      </ImageComponent>
+      <CodeComponent name="code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="console.log(&quot;probesubtype = &quot;, probe_subtype);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="print(&quot;probesubtype = &quot;, probe_subtype)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <KeyboardComponent name="key_resp" plugin="None">
+        <Param val="'f', 'j'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="" valType="str" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="key_resp" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+      <TextComponent name="yesKey_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="yesKey_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(-0.2, -0.35)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="[F]&amp;#10;YES" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <TextComponent name="noKey_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="noKey_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0.2, -0.35)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="[J]&amp;#10;NO" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="Delay_4000">
+      <RoutineSettingsComponent name="Delay_4000" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="Delay_4000" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <PolygonComponent name="delay_fixation_4000" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="dimgray" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="dimgray" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="delay_fixation_4000" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="(0.03, 0.03)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="4" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+    </Routine>
+    <Routine name="Delay_2000">
+      <RoutineSettingsComponent name="Delay_2000" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="Delay_2000" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <PolygonComponent name="delay_fixation_2000" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="dimgray" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="dimgray" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="delay_fixation_2000" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="(0.03, 0.03)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="2" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+    </Routine>
+    <Routine name="Welcome">
+      <RoutineSettingsComponent name="Welcome" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="Welcome" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="init_code" plugin="None">
+        <Param val="#### LOAD NECESSARY PACKAGES ####&amp;#10;import random&amp;#10;import pandas as pd&amp;#10;import numpy as np&amp;#10;import os&amp;#10;from collections import Counter&amp;#10;import copy&amp;#10;&amp;#10;# Set participant number&amp;#10;# need this to create a folder with each subs design matrix&amp;#10;participant_number = &quot;test&quot;  # Edward, if you put this code in PsychoPy this would need to be changed to refelect the expInfo&amp;#10;# expInfo['participant']&amp;#10;&amp;#10;# set directory path&amp;#10;try:&amp;#10;    _thisDir = os.path.dirname(os.path.abspath(__file__))&amp;#10;except NameError:&amp;#10;    print(&quot;__file__ does not exist&quot;)&amp;#10;    _thisDir = os.getcwd()&amp;#10;&amp;#10;# create a subject specific folder to save all lists&amp;#10;list_foldername = os.path.join(_thisDir, &quot;subject lists&quot;, f&quot;sub-{participant_number}&quot;)&amp;#10;&amp;#10;phase_subFolder = &quot;main_task&quot;&amp;#10;&amp;#10;# Create the subject folder if it doesn't exist&amp;#10;if not os.path.exists(list_foldername):&amp;#10;    os.makedirs(list_foldername)&amp;#10;    print(f&quot;List folder successfully created for sub-{participant_number}&quot;)&amp;#10;else:&amp;#10;    print(f&quot;List folder already exists for sub-{participant_number}...&quot;)&amp;#10;&amp;#10;# Create each phase subfolder within the subject's folder&amp;#10;phase_folder_path = os.path.join(list_foldername, phase_subFolder)&amp;#10;# Create the phase folder&amp;#10;if not os.path.exists(phase_folder_path):&amp;#10;    os.makedirs(phase_folder_path)&amp;#10;    print(f&quot;Created phase folder: {phase_subFolder}&quot;)&amp;#10;else:&amp;#10;    print(f&quot;Phase folder '{phase_subFolder}' already exists...&quot;)&amp;#10;&amp;#10;#### SETUP STIMULUS MASTER LISTS ####&amp;#10;# set a random seed&amp;#10;random.seed()&amp;#10;&amp;#10;# read in the master stimulus lists&amp;#10;faces_mainTask_list_infile = (&amp;#10;    _thisDir&amp;#10;    + os.sep&amp;#10;    + &quot;stimuli&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;csvs&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;main_task&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;faces_mainTask.csv&quot;&amp;#10;)&amp;#10;&amp;#10;places_mainTask_list_infile = (&amp;#10;    _thisDir&amp;#10;    + os.sep&amp;#10;    + &quot;stimuli&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;csvs&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;main_task&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;places_mainTask.csv&quot;&amp;#10;)&amp;#10;&amp;#10;fruits_mainTask_list_infile = (&amp;#10;    _thisDir&amp;#10;    + os.sep&amp;#10;    + &quot;stimuli&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;csvs&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;main_task&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;fruits_mainTask.csv&quot;&amp;#10;)&amp;#10;&amp;#10;faces_novel_list_infile = (&amp;#10;    _thisDir&amp;#10;    + os.sep&amp;#10;    + &quot;stimuli&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;csvs&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;main_task&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;faces_novel.csv&quot;&amp;#10;)&amp;#10;&amp;#10;places_novel_list_infile = (&amp;#10;    _thisDir&amp;#10;    + os.sep&amp;#10;    + &quot;stimuli&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;csvs&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;main_task&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;places_novel.csv&quot;&amp;#10;)&amp;#10;&amp;#10;fruits_novel_list_infile = (&amp;#10;    _thisDir&amp;#10;    + os.sep&amp;#10;    + &quot;stimuli&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;csvs&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;main_task&quot;&amp;#10;    + os.sep&amp;#10;    + &quot;fruits_novel.csv&quot;&amp;#10;)&amp;#10;&amp;#10;# open stimulus mater files&amp;#10;faces_mainTask_list = pd.read_csv(faces_mainTask_list_infile, header=None).loc[:,0].tolist()   # 20 count&amp;#10;places_mainTask_list = pd.read_csv(places_mainTask_list_infile, header=None).loc[:,0].tolist()    # 20 count&amp;#10;fruits_mainTask_list = pd.read_csv(fruits_mainTask_list_infile, header=None).loc[:,0].tolist()     # 20 count&amp;#10;&amp;#10;faces_novel_list = pd.read_csv(faces_novel_list_infile, header=None).loc[:,0].tolist()    # 77 count&amp;#10;places_novel_list = pd.read_csv(places_novel_list_infile, header=None).loc[:,0].tolist()    # 75 count&amp;#10;fruits_novel_list = pd.read_csv(fruits_novel_list_infile, header=None).loc[:,0].tolist()    # 77 count&amp;#10;&amp;#10;&amp;#10;#### CREATE MAIN TASK LISTS ####&amp;#10;# Define some experiment variables&amp;#10;total_trials = 144    # number of trials&amp;#10;run_len = 24    # trials per run&amp;#10;num_runs = 6    # number of runs&amp;#10;num_oper_per_run = run_len // 3    # 3 operations&amp;#10;&amp;#10;# create the encoding category labels for item 1 (left of screen) and item 2 (right of screen)&amp;#10;encode_1_cat = (&amp;#10;    [&quot;faces&quot;] * 4&amp;#10;    + [&quot;places&quot;] * 4&amp;#10;    + [&quot;faces&quot;] * 4&amp;#10;    + [&quot;fruits&quot;] * 4&amp;#10;    + [&quot;places&quot;] * 4&amp;#10;    + [&quot;fruits&quot;] * 4&amp;#10;) * 6&amp;#10;encode_2_cat = (&amp;#10;    [&quot;places&quot;] * 4&amp;#10;    + [&quot;faces&quot;] * 4&amp;#10;    + [&quot;fruits&quot;] * 4&amp;#10;    + [&quot;faces&quot;] * 4&amp;#10;    + [&quot;fruits&quot;] * 4&amp;#10;    + [&quot;places&quot;] * 4&amp;#10;) * 6&amp;#10;&amp;#10;# intiate df&amp;#10;mainTask_df = pd.DataFrame({&quot;encode_1_cat&quot;: encode_1_cat, &quot;encode_2_cat&quot;: encode_2_cat})&amp;#10;&amp;#10;# create lst of operations&amp;#10;operation_list_run1 = ([&quot;maintain&quot;] * 2 + [&quot;suppress&quot;] * 2 + [&quot;replace&quot;] * 2) * 4&amp;#10;operation_list_run2 = ([&quot;suppress&quot;] * 2 + [&quot;replace&quot;] * 2 + [&quot;maintain&quot;] * 2) * 4&amp;#10;operation_list_run3 = ([&quot;replace&quot;] * 2 + [&quot;maintain&quot;] * 2 + [&quot;suppress&quot;] * 2) * 4&amp;#10;operation_list_run4 = ([&quot;maintain&quot;] * 2 + [&quot;suppress&quot;] * 2 + [&quot;replace&quot;] * 2) * 4&amp;#10;operation_list_run5 = ([&quot;suppress&quot;] * 2 + [&quot;replace&quot;] * 2 + [&quot;maintain&quot;] * 2) * 4&amp;#10;operation_list_run6 = ([&quot;replace&quot;] * 2 + [&quot;maintain&quot;] * 2 + [&quot;suppress&quot;] * 2) * 4&amp;#10;&amp;#10;operation_list_allRuns = (&amp;#10;    operation_list_run1&amp;#10;    + operation_list_run2&amp;#10;    + operation_list_run3&amp;#10;    + operation_list_run4&amp;#10;    + operation_list_run5&amp;#10;    + operation_list_run6&amp;#10;)&amp;#10;&amp;#10;mainTask_df[&quot;operation&quot;] = operation_list_allRuns&amp;#10;&amp;#10;# set replacement category&amp;#10;stim_cats = {&quot;faces&quot;, &quot;places&quot;, &quot;fruits&quot;}&amp;#10;&amp;#10;&amp;#10;def find_replace_cat(row):&amp;#10;    if row[&quot;operation&quot;] == &quot;replace&quot;:&amp;#10;        present = {row[&quot;encode_1_cat&quot;], row[&quot;encode_2_cat&quot;]}&amp;#10;        missing = stim_cats - present&amp;#10;        return missing.pop() if missing else &quot;NA&quot;&amp;#10;    else:&amp;#10;        return &quot;NA&quot;&amp;#10;&amp;#10;&amp;#10;mainTask_df[&quot;replace_cat&quot;] = mainTask_df.apply(find_replace_cat, axis=1)&amp;#10;&amp;#10;# set cue location&amp;#10;mainTask_cue_loc = ([&quot;left&quot; for i in range(1)] + [&quot;right&quot; for i in range(1)]) * 72&amp;#10;mainTask_df[&quot;cue_position&quot;] = mainTask_cue_loc&amp;#10;&amp;#10;# set trial num&amp;#10;mainTask_trial_num = list(range(1, 25)) * 6&amp;#10;mainTask_df[&quot;trial_num&quot;] = mainTask_trial_num&amp;#10;&amp;#10;# set probe sub-type&amp;#10;maintain_probes = [&quot;cued&quot;, &quot;uncued&quot;, &quot;novel&quot;, &quot;novel&quot;]&amp;#10;replace_probes = [&quot;lure&quot;, &quot;replacement&quot;, &quot;uncued&quot;, &quot;novel&quot;]&amp;#10;suppress_probes = [&quot;lure&quot;, &quot;uncued&quot;, &quot;uncued&quot;, &quot;novel&quot;]&amp;#10;# iterate through dataframe to add probe_subtypes&amp;#10;probe_subtype = []&amp;#10;for i, row in mainTask_df.iterrows():&amp;#10;    # print(i)&amp;#10;    if row[&quot;trial_num&quot;] == 1:&amp;#10;        # num_probes * (run_len // (num_probes * num_operations))&amp;#10;        run_maintain_probes = np.random.permutation(maintain_probes * (num_oper_per_run // len(maintain_probes))).tolist()&amp;#10;        run_replace_probes = np.random.permutation(replace_probes * (num_oper_per_run // len(replace_probes))).tolist()&amp;#10;        run_suppress_probes = np.random.permutation(suppress_probes * (num_oper_per_run // len(suppress_probes))).tolist()&amp;#10;    if row[&quot;operation&quot;] == &quot;maintain&quot;:&amp;#10;        probe_subtype.append(run_maintain_probes.pop())&amp;#10;    elif row[&quot;operation&quot;] == &quot;replace&quot;:&amp;#10;        probe_subtype.append(run_replace_probes.pop())&amp;#10;    elif row[&quot;operation&quot;] == &quot;suppress&quot;:&amp;#10;        probe_subtype.append(run_suppress_probes.pop())&amp;#10;# add column to dataframe&amp;#10;mainTask_df[&quot;probe_subtype&quot;] = probe_subtype&amp;#10;&amp;#10;# set run number&amp;#10;mainTask_run_num = (&amp;#10;    [1 for i in range(24)]&amp;#10;    + [2 for i in range(24)]&amp;#10;    + [3 for i in range(24)]&amp;#10;    + [4 for i in range(24)]&amp;#10;    + [5 for i in range(24)]&amp;#10;    + [6 for i in range(24)]&amp;#10;)&amp;#10;mainTask_df[&quot;run_num&quot;] = mainTask_run_num&amp;#10;&amp;#10;&amp;#10;# Add jitter, randomized within run&amp;#10;jitter = []&amp;#10;for i in range(num_runs):&amp;#10;    jitter += np.random.permutation([3, 4, 5] * int(run_len / 3)).tolist()&amp;#10;mainTask_df[&quot;jitter&quot;] = jitter&amp;#10;&amp;#10;# Add rest trigger&amp;#10;mainTask_df[&quot;rest_trigger&quot;] = [int(r.trial_num == run_len) for _, r in mainTask_df.iterrows()]&amp;#10;&amp;#10;## Select stims for each trial&amp;#10;def select_stim(probecounter, crs_list, stimsdict, useprobe=True,&amp;#10;                oper=None, cuestatus=None, imgcat=None, reverse=False,):&amp;#10;    # Iterate through the sorted stim list (sorted by number of times used as probe)&amp;#10;    # initiate a counter for the entire stimsdict&amp;#10;    counter = Counter()&amp;#10;    for o in stimsdict:&amp;#10;        for p in stimsdict[o]:&amp;#10;            for c in stimsdict[o][p]:&amp;#10;                counter.update(stimsdict[o][p][c])&amp;#10;    # subselect viable list (stim in current condition dict) then sort from most common to least commonly used&amp;#10;    viable_list = [sv for sv in counter.most_common() if sv[0] in stimsdict[oper][cuestatus][imgcat]]&amp;#10;    # iterate from least common to most common&amp;#10;    for value in np.unique([v for _, v in viable_list]):&amp;#10;        # Subselect stims matching the used-value&amp;#10;        stims = [s[0] for s in viable_list if s[1] == value]&amp;#10;        if useprobe:&amp;#10;            # Sort stims based on number of times probed&amp;#10;            sortedstims = [k for k in sorted(probecounter.items(), key=lambda x:x[1]) if k[0] in stims]&amp;#10;            if reverse:&amp;#10;                sortedstims.reverse()&amp;#10;        else:&amp;#10;            sortedstims = np.random.permutation(stims)&amp;#10;        # iterate and pull stim&amp;#10;        if useprobe:&amp;#10;            for val in np.unique([k[1] for k in sortedstims]):&amp;#10;                substims = np.random.permutation([k[0] for k in sortedstims if k[1] == val])&amp;#10;                for s in substims:&amp;#10;                    if s not in crs_list:&amp;#10;                        stimsdict[oper][cuestatus][imgcat].remove(s)    # remove stim from stims dict&amp;#10;                        crs_list.append(s)  # add stim to current run stims&amp;#10;                        return s&amp;#10;        else:&amp;#10;            for s in sortedstims:&amp;#10;                # find if sim is in current category and if stim has been used in current run&amp;#10;                if s not in crs_list:&amp;#10;                    stimsdict[oper][cuestatus][imgcat].remove(s)    # remove stim from stims dict&amp;#10;                    crs_list.append(s)    # add stim to current run stims&amp;#10;                    return s&amp;#10;    # print(&quot;No stimuli selected&quot;)&amp;#10;    return None&amp;#10;&amp;#10;def check_trials(imglist: list, numtrials: int):&amp;#10;    &quot;&quot;&quot;&amp;#10;    checks a list of dictionaries to ensure that all the necesssary imgs have been selected for each trial in numtrials&amp;#10;    &quot;&quot;&quot;&amp;#10;    return len([i[&quot;left&quot;] for i in imglist if i[&quot;left&quot;] is not None]) == numtrials and \&amp;#10;        len([i[&quot;right&quot;] for i in imglist if i[&quot;right&quot;] is not None]) == numtrials and \&amp;#10;        len([i[&quot;replacement&quot;] for i in imglist if i[&quot;replacement&quot;] is not None]) == numtrials and \&amp;#10;        len([i[&quot;probe&quot;] for i in imglist if i[&quot;probe&quot;] is not None]) == numtrials&amp;#10;&amp;#10;&amp;#10;# initiate a list to store the stims&amp;#10;check = False&amp;#10;retries = 0&amp;#10;# Set the operation cue images&amp;#10;opcue_dict = {&quot;maintain&quot;: &quot;stimuli/cues/maintain_cue_image.png&quot;,&amp;#10;              &quot;suppress&quot;: &quot;stimuli/cues/suppress_cue_image.png&quot;,}&amp;#10;# Build the lists&amp;#10;while not check:&amp;#10;    # Assign stim to trials&amp;#10;    stims_dict = {}&amp;#10;    # create dictionary for each operation, cue-type and img category 3*2*3*19 = 342&amp;#10;    for oper in [&quot;maintain&quot;, &quot;suppress&quot;, &quot;replace&quot;]:&amp;#10;        stims_dict[oper] = {}&amp;#10;        for probe in [&quot;cued&quot;, &quot;uncued&quot;, &quot;replacement&quot;]:&amp;#10;            if oper != &quot;replace&quot; and probe == &quot;replacement&quot;:    # only create replacement category for replace trials&amp;#10;                continue&amp;#10;            stims_dict[oper][probe] = {&quot;faces&quot;: np.random.permutation(faces_mainTask_list).tolist(),&amp;#10;                                       &quot;places&quot;: np.random.permutation(places_mainTask_list).tolist(),&amp;#10;                                       &quot;fruits&quot;: np.random.permutation(fruits_mainTask_list).tolist(), }&amp;#10;    # Save novel stims into dict&amp;#10;    novel_stims_dict = {&quot;faces&quot;: np.random.permutation(faces_novel_list).tolist(),&amp;#10;                        &quot;places&quot;: np.random.permutation(places_novel_list).tolist(),&amp;#10;                        &quot;fruits&quot;: np.random.permutation(fruits_novel_list).tolist(), }&amp;#10;    # initiate counter&amp;#10;    timesprobed_counter = Counter(faces_mainTask_list + places_mainTask_list + fruits_mainTask_list)&amp;#10;    # reset the counter to 0&amp;#10;    for entry in timesprobed_counter:&amp;#10;        timesprobed_counter[entry] = 0&amp;#10;    # initiate the image list&amp;#10;    image_list = []&amp;#10;    # Perform the build chunked by run&amp;#10;    for run in range(1, num_runs + 1):&amp;#10;        df = mainTask_df[mainTask_df[&quot;run_num&quot;] == run]&amp;#10;        # Loop until run has completed building&amp;#10;        run_check = False&amp;#10;        t = 0&amp;#10;        # Try to use probe as much as possible&amp;#10;        # print(&quot;now using probe counter&quot;)&amp;#10;        useprobe = True&amp;#10;        while not run_check:&amp;#10;            random.seed()&amp;#10;            # initiate a run specific image list&amp;#10;            run_image_list = []&amp;#10;            # Initiate list to keep track of images in current run&amp;#10;            current_run_stims = []&amp;#10;            # Create copies of the master tracking lists&amp;#10;            run_timesprobed_counter = copy.deepcopy(timesprobed_counter)&amp;#10;            run_stims_dict = copy.deepcopy(stims_dict)&amp;#10;            run_novel_stims_dict = copy.deepcopy(novel_stims_dict)&amp;#10;            for i, r in df.iterrows():&amp;#10;                # Determine the image to be probed&amp;#10;                if r.probe_subtype == &quot;cued&quot; or r.probe_subtype == &quot;lure&quot;:&amp;#10;                    probe_pos = r.cue_position&amp;#10;                elif r.probe_subtype == &quot;uncued&quot;:&amp;#10;                    probe_pos = &quot;left&quot; if r.cue_position == &quot;right&quot; else &quot;right&quot;&amp;#10;                elif r.probe_subtype == &quot;replacement&quot;:&amp;#10;                    probe_pos = &quot;replacement&quot;&amp;#10;                else:&amp;#10;                    probe_pos = None&amp;#10;                # Find an image for each position&amp;#10;                images_dict = {}&amp;#10;                for imgnum in [&quot;left&quot;, &quot;right&quot;, &quot;replacement&quot;]:&amp;#10;                    # determine the image category&amp;#10;                    if imgnum == &quot;left&quot;:&amp;#10;                        imgcat = r.encode_1_cat&amp;#10;                    elif imgnum == &quot;right&quot;:&amp;#10;                        imgcat = r.encode_2_cat&amp;#10;                    elif imgnum == &quot;replacement&quot;:&amp;#10;                        if r.operation != &quot;replace&quot;:&amp;#10;                            images_dict[&quot;replacement&quot;] = opcue_dict[r.operation]&amp;#10;                            continue&amp;#10;                        else:&amp;#10;                            imgcat = r.replace_cat&amp;#10;                    # determine cue status for image&amp;#10;                    cue_status = &quot;replacement&quot; if imgnum == &quot;replacement&quot; else (&quot;uncued&quot;, &quot;cued&quot;)[r.cue_position == imgnum]&amp;#10;                    # select the image&amp;#10;                    # Create sorted lists of stims based on number of times probed&amp;#10;                    if imgnum == probe_pos:&amp;#10;                        img = select_stim(run_timesprobed_counter, current_run_stims, run_stims_dict, useprobe=useprobe,&amp;#10;                                          oper=r.operation, cuestatus=cue_status, imgcat=imgcat, reverse=False)&amp;#10;                    else:&amp;#10;                        img = select_stim(run_timesprobed_counter, current_run_stims, run_stims_dict, useprobe=useprobe,&amp;#10;                                          oper=r.operation, cuestatus=cue_status, imgcat=imgcat, reverse=True)&amp;#10;                    # Save the image into the dict&amp;#10;                    images_dict[imgnum] = img&amp;#10;                # Select a probe image&amp;#10;                if probe_pos is not None:&amp;#10;                    probe_img = images_dict[probe_pos]&amp;#10;                    # Update the run timesprobed counter&amp;#10;                    run_timesprobed_counter[probe_img] += 1&amp;#10;                else:&amp;#10;                    probe_cat = np.random.choice([r.encode_1_cat, r.encode_2_cat])&amp;#10;                    probe_img = run_novel_stims_dict[probe_cat].pop()&amp;#10;                # Save the probe image&amp;#10;                images_dict[&quot;probe&quot;] = probe_img&amp;#10;                # Save the image dict into the run image list&amp;#10;                run_image_list.append(images_dict)&amp;#10;&amp;#10;            # Perform a check for the run&amp;#10;            run_check = check_trials(run_image_list, run_len)&amp;#10;            # print(&quot;run = &quot;, run)&amp;#10;            # print(&quot;runcheck = &quot;, run_check)&amp;#10;            t += 1&amp;#10;            if t &gt; 5:&amp;#10;                # print(&quot;now turning useprobe to False&quot;)&amp;#10;                useprobe = False&amp;#10;            if t &gt; 10:&amp;#10;                break&amp;#10;        # If run passes check, overwrite all ongoing saves onto counters/lists&amp;#10;        image_list += run_image_list&amp;#10;        timesprobed_counter = run_timesprobed_counter&amp;#10;        stims_dict = run_stims_dict&amp;#10;        novel_stims_dict = run_novel_stims_dict&amp;#10;    if len(image_list) == total_trials:&amp;#10;        print(&quot;completed build, now checking...&quot;)&amp;#10;        check = check_trials(image_list, total_trials)&amp;#10;    else:&amp;#10;        print(len(image_list))&amp;#10;        print(&quot;DNF, restarting...&quot;)&amp;#10;        continue&amp;#10;    retries += 1&amp;#10;    if retries &gt; 20:&amp;#10;        break&amp;#10;if retries &gt; 20:&amp;#10;    # Use a premade stim list&amp;#10;    premade_infile = f&quot;stimuli/csvs/maintask_stimlists/main_stim_list_{random.randint(0,9)}.csv&quot;&amp;#10;    print(f&quot;using pre-made stim list {os.path.split(premade_infile)[1]}&quot;)&amp;#10;    mainTask_df = pd.read_csv(premade_infile)&amp;#10;else:&amp;#10;    # Add stims to df&amp;#10;    mainTask_df[&quot;encode_1_img&quot;] = [i[&quot;left&quot;] for i in image_list]&amp;#10;    mainTask_df[&quot;encode_2_img&quot;] = [i[&quot;right&quot;] for i in image_list]&amp;#10;    mainTask_df[&quot;replace_img&quot;] = [i[&quot;replacement&quot;] for i in image_list]&amp;#10;    mainTask_df[&quot;probe_img&quot;] = [i[&quot;probe&quot;] for i in image_list]&amp;#10;&amp;#10;mainTask_df_infile = f&quot;{list_foldername}/main_task/main_stim_list.csv&quot;&amp;#10;# Save to maintask folder&amp;#10;mainTask_df.to_csv(&amp;#10;    mainTask_df_infile , index=False&amp;#10;)&amp;#10;stim_list = mainTask_df_infile&amp;#10;" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="init_code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <TextComponent name="welcome_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="welcome_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="Welcome to an experiment by the ... Lab!&amp;#10;&amp;#10;This experiment is meant to be run in full-screen mode. DO NOT escape out of the full-screen. Otherwise you will have to restart the entire experiment from the beginning.&amp;#10;&amp;#10;&amp;#10;Press &lt;SPACE&gt; to continue" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <KeyboardComponent name="welcome_keyResp" plugin="None">
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="" valType="str" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="welcome_keyResp" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="Manipulate_Instruct">
+      <RoutineSettingsComponent name="Manipulate_Instruct" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="Manipulate_Instruct" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+    </Routine>
+    <Routine name="ITI">
+      <RoutineSettingsComponent name="ITI" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="ITI" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <PolygonComponent name="ITI_fixation" plugin="None">
+        <Param val="center" valType="str" updates="constant" name="anchor"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="True" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="dimgray" valType="color" updates="constant" name="fillColor"/>
+        <Param val="linear" valType="str" updates="constant" name="interpolate"/>
+        <Param val="dimgray" valType="color" updates="constant" name="lineColor"/>
+        <Param val="1" valType="num" updates="constant" name="lineWidth"/>
+        <Param val="4" valType="int" updates="constant" name="nVertices"/>
+        <Param val="ITI_fixation" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="circle" valType="str" updates="None" name="shape"/>
+        <Param val="(0.03, 0.03)" valType="list" updates="constant" name="size"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="jitter" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="list" updates="constant" name="vertices"/>
+      </PolygonComponent>
+      <TextComponent name="ITI_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="ITI_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="jitter" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="Rest">
+      <RoutineSettingsComponent name="Rest" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="Rest" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="rest_welcome" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="rest_welcome" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="30" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$f&quot;Rest!\n\nGreat job completing the run! You have completed {run_num} out of 6 runs. You may now take a {30 - t:.0f} second break!&quot;" valType="str" updates="set every frame" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <KeyboardComponent name="rest_continue" plugin="None">
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="" valType="str" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="rest_continue" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="20" valType="code" updates="None" name="startVal"/>
+        <Param val="time (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="30" valType="code" updates="constant" name="stopVal"/>
+        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+      <TextComponent name="rest_continue_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.03" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="rest_continue_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, -0.4)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="20" valType="code" updates="None" name="startVal"/>
+        <Param val="time (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="30" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="Press &lt;SPACE&gt; if you would like to end the break early!" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="Trial_prepare">
+      <RoutineSettingsComponent name="Trial_prepare" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="Trial_prepare" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <TextComponent name="Trial_prepare_text" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="Trial_prepare_text" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="5" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$f&quot;The trial will begin in {5 - t:.0f} s.&quot;" valType="str" updates="set every frame" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="Welcome"/>
+    <Routine name="Trial_prepare"/>
+    <LoopInitiator loopType="TrialHandler" name="trials">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 1), ('probe_subtype', 'cued'), ('run_num', 1), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/lebron.png'), ('encode_2_img', 'stimuli/images/places/cinderella_castle.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/lebron.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 2), ('probe_subtype', 'cued'), ('run_num', 1), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/aaron_rodgers.png'), ('encode_2_img', 'stimuli/images/places/flatiron_building.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/flatiron_building.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 3), ('probe_subtype', 'uncued'), ('run_num', 1), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/scarlett_johansson.png'), ('encode_2_img', 'stimuli/images/places/unique_mountains.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/unique_mountains.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 4), ('probe_subtype', 'lure'), ('run_num', 1), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/macklemore.png'), ('encode_2_img', 'stimuli/images/places/skyway_bridge.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/skyway_bridge.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'left'), ('trial_num', 5), ('probe_subtype', 'replacement'), ('run_num', 1), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/millau_bridge.png'), ('encode_2_img', 'stimuli/images/faces/jj_watt.png'), ('replace_img', 'stimuli/images/fruits/mixed_grapes05.png'), ('probe_img', 'stimuli/images/fruits/mixed_grapes05.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'right'), ('trial_num', 6), ('probe_subtype', 'replacement'), ('run_num', 1), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/harvard.png'), ('encode_2_img', 'stimuli/images/faces/penelope_cruz.png'), ('replace_img', 'stimuli/images/fruits/mixed_grapes02.png'), ('probe_img', 'stimuli/images/fruits/mixed_grapes02.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 7), ('probe_subtype', 'novel'), ('run_num', 1), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/aoraki.png'), ('encode_2_img', 'stimuli/images/faces/blake_shelton.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/ronda_rousey.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 8), ('probe_subtype', 'novel'), ('run_num', 1), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/mediterranean_beach.png'), ('encode_2_img', 'stimuli/images/faces/joe_biden.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/adele.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 9), ('probe_subtype', 'uncued'), ('run_num', 1), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/brad_pitt.png'), ('encode_2_img', 'stimuli/images/fruits/leaning_pears.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/leaning_pears.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 10), ('probe_subtype', 'novel'), ('run_num', 1), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/rand_paul.png'), ('encode_2_img', 'stimuli/images/fruits/pear03.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/hillary_clinton.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'left'), ('trial_num', 11), ('probe_subtype', 'novel'), ('run_num', 1), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/kobe_bryant.png'), ('encode_2_img', 'stimuli/images/fruits/gala_apple.png'), ('replace_img', 'stimuli/images/places/gherkin.png'), ('probe_img', 'stimuli/images/faces/bernie_sanders.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'right'), ('trial_num', 12), ('probe_subtype', 'uncued'), ('run_num', 1), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/abby_wambach.png'), ('encode_2_img', 'stimuli/images/fruits/honeydew_half.png'), ('replace_img', 'stimuli/images/places/distant_mountains.png'), ('probe_img', 'stimuli/images/faces/abby_wambach.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 13), ('probe_subtype', 'uncued'), ('run_num', 1), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/watermelon.png'), ('encode_2_img', 'stimuli/images/faces/ryan_reynolds.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/ryan_reynolds.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 14), ('probe_subtype', 'novel'), ('run_num', 1), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/gala_apple_leaf.png'), ('encode_2_img', 'stimuli/images/faces/angela_merkel.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/sliced_pears02.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 15), ('probe_subtype', 'novel'), ('run_num', 1), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/green_grapes.png'), ('encode_2_img', 'stimuli/images/faces/zoe_saldana.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/john_kerry.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 16), ('probe_subtype', 'uncued'), ('run_num', 1), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes03.png'), ('encode_2_img', 'stimuli/images/faces/rihanna.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/mixed_grapes03.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'left'), ('trial_num', 17), ('probe_subtype', 'lure'), ('run_num', 1), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/glass_bridge.png'), ('encode_2_img', 'stimuli/images/fruits/halved_watermelon02.png'), ('replace_img', 'stimuli/images/faces/george_clooney.png'), ('probe_img', 'stimuli/images/places/glass_bridge.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'right'), ('trial_num', 18), ('probe_subtype', 'lure'), ('run_num', 1), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/royal_albert_hall.png'), ('encode_2_img', 'stimuli/images/fruits/honeydew_melon02.png'), ('replace_img', 'stimuli/images/faces/mila_kunis.png'), ('probe_img', 'stimuli/images/fruits/honeydew_melon02.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 19), ('probe_subtype', 'uncued'), ('run_num', 1), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/danyang_bridge.png'), ('encode_2_img', 'stimuli/images/fruits/whole_pears.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/whole_pears.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 20), ('probe_subtype', 'novel'), ('run_num', 1), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/mount_everest.png'), ('encode_2_img', 'stimuli/images/fruits/canteloupe_sliced04.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/mountain_range.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 21), ('probe_subtype', 'uncued'), ('run_num', 1), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/cut_cantaloupe.png'), ('encode_2_img', 'stimuli/images/places/piza.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/piza.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 22), ('probe_subtype', 'lure'), ('run_num', 1), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/cantaloupe_sliced03.png'), ('encode_2_img', 'stimuli/images/places/matterhorn.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/matterhorn.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'left'), ('trial_num', 23), ('probe_subtype', 'novel'), ('run_num', 1), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes.png'), ('encode_2_img', 'stimuli/images/places/mount_fuji.png'), ('replace_img', 'stimuli/images/faces/alex_rodriguez.png'), ('probe_img', 'stimuli/images/fruits/whole_cantaloupe.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'right'), ('trial_num', 24), ('probe_subtype', 'uncued'), ('run_num', 1), ('jitter', 5), ('rest_trigger', 1), ('encode_1_img', 'stimuli/images/fruits/fresh_fuji.png'), ('encode_2_img', 'stimuli/images/places/covered_bridge.png'), ('replace_img', 'stimuli/images/faces/justin_bieber.png'), ('probe_img', 'stimuli/images/fruits/fresh_fuji.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 1), ('probe_subtype', 'lure'), ('run_num', 2), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/mila_kunis.png'), ('encode_2_img', 'stimuli/images/places/mount_fuji.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/mila_kunis.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 2), ('probe_subtype', 'uncued'), ('run_num', 2), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/brad_pitt.png'), ('encode_2_img', 'stimuli/images/places/millau_bridge.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/brad_pitt.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'left'), ('trial_num', 3), ('probe_subtype', 'uncued'), ('run_num', 2), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/alex_rodriguez.png'), ('encode_2_img', 'stimuli/images/places/gherkin.png'), ('replace_img', 'stimuli/images/fruits/watermelon.png'), ('probe_img', 'stimuli/images/places/gherkin.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'right'), ('trial_num', 4), ('probe_subtype', 'lure'), ('run_num', 2), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/joe_biden.png'), ('encode_2_img', 'stimuli/images/places/danyang_bridge.png'), ('replace_img', 'stimuli/images/fruits/pear03.png'), ('probe_img', 'stimuli/images/places/danyang_bridge.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 5), ('probe_subtype', 'novel'), ('run_num', 2), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/royal_albert_hall.png'), ('encode_2_img', 'stimuli/images/faces/justin_bieber.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/hope_solo.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 6), ('probe_subtype', 'novel'), ('run_num', 2), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/harvard.png'), ('encode_2_img', 'stimuli/images/faces/rihanna.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/chris_christie.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 7), ('probe_subtype', 'novel'), ('run_num', 2), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/covered_bridge.png'), ('encode_2_img', 'stimuli/images/faces/scarlett_johansson.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/morgan_freeman.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 8), ('probe_subtype', 'lure'), ('run_num', 2), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/mount_everest.png'), ('encode_2_img', 'stimuli/images/faces/rand_paul.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/rand_paul.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'left'), ('trial_num', 9), ('probe_subtype', 'novel'), ('run_num', 2), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/blake_shelton.png'), ('encode_2_img', 'stimuli/images/fruits/cut_cantaloupe.png'), ('replace_img', 'stimuli/images/places/aoraki.png'), ('probe_img', 'stimuli/images/fruits/apple05b.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'right'), ('trial_num', 10), ('probe_subtype', 'lure'), ('run_num', 2), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/aaron_rodgers.png'), ('encode_2_img', 'stimuli/images/fruits/green_grapes.png'), ('replace_img', 'stimuli/images/places/mediterranean_beach.png'), ('probe_img', 'stimuli/images/fruits/green_grapes.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 11), ('probe_subtype', 'novel'), ('run_num', 2), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/macklemore.png'), ('encode_2_img', 'stimuli/images/fruits/halved_watermelon02.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/half_apple.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 12), ('probe_subtype', 'uncued'), ('run_num', 2), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/angela_merkel.png'), ('encode_2_img', 'stimuli/images/fruits/cantaloupe_sliced03.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/angela_merkel.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 13), ('probe_subtype', 'uncued'), ('run_num', 2), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/gala_apple_leaf.png'), ('encode_2_img', 'stimuli/images/faces/jj_watt.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/jj_watt.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 14), ('probe_subtype', 'uncued'), ('run_num', 2), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/canteloupe_sliced04.png'), ('encode_2_img', 'stimuli/images/faces/penelope_cruz.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/canteloupe_sliced04.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'left'), ('trial_num', 15), ('probe_subtype', 'uncued'), ('run_num', 2), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/gala_apple.png'), ('encode_2_img', 'stimuli/images/faces/zoe_saldana.png'), ('replace_img', 'stimuli/images/places/cinderella_castle.png'), ('probe_img', 'stimuli/images/faces/zoe_saldana.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'right'), ('trial_num', 16), ('probe_subtype', 'replacement'), ('run_num', 2), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/honeydew_half.png'), ('encode_2_img', 'stimuli/images/faces/george_clooney.png'), ('replace_img', 'stimuli/images/places/skyway_bridge.png'), ('probe_img', 'stimuli/images/places/skyway_bridge.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 17), ('probe_subtype', 'cued'), ('run_num', 2), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/distant_mountains.png'), ('encode_2_img', 'stimuli/images/fruits/mixed_grapes.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/distant_mountains.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 18), ('probe_subtype', 'novel'), ('run_num', 2), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/flatiron_building.png'), ('encode_2_img', 'stimuli/images/fruits/leaning_pears.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/pear.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 19), ('probe_subtype', 'uncued'), ('run_num', 2), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/unique_mountains.png'), ('encode_2_img', 'stimuli/images/fruits/honeydew_melon02.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/honeydew_melon02.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 20), ('probe_subtype', 'novel'), ('run_num', 2), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/matterhorn.png'), ('encode_2_img', 'stimuli/images/fruits/mixed_grapes03.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/sunset_beach.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'left'), ('trial_num', 21), ('probe_subtype', 'novel'), ('run_num', 2), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/fresh_fuji.png'), ('encode_2_img', 'stimuli/images/places/glass_bridge.png'), ('replace_img', 'stimuli/images/faces/kobe_bryant.png'), ('probe_img', 'stimuli/images/fruits/mixed_grapes04.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'right'), ('trial_num', 22), ('probe_subtype', 'replacement'), ('run_num', 2), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/whole_pears.png'), ('encode_2_img', 'stimuli/images/places/piza.png'), ('replace_img', 'stimuli/images/faces/lebron.png'), ('probe_img', 'stimuli/images/faces/lebron.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 23), ('probe_subtype', 'cued'), ('run_num', 2), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes02.png'), ('encode_2_img', 'stimuli/images/places/yellow_sand_beach.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/mixed_grapes02.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 24), ('probe_subtype', 'uncued'), ('run_num', 2), ('jitter', 4), ('rest_trigger', 1), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes05.png'), ('encode_2_img', 'stimuli/images/places/alamo.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/mixed_grapes05.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'left'), ('trial_num', 1), ('probe_subtype', 'uncued'), ('run_num', 3), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/rihanna.png'), ('encode_2_img', 'stimuli/images/places/mediterranean_beach.png'), ('replace_img', 'stimuli/images/fruits/honeydew_half.png'), ('probe_img', 'stimuli/images/places/mediterranean_beach.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'right'), ('trial_num', 2), ('probe_subtype', 'replacement'), ('run_num', 3), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/macklemore.png'), ('encode_2_img', 'stimuli/images/places/cinderella_castle.png'), ('replace_img', 'stimuli/images/fruits/gala_apple_leaf.png'), ('probe_img', 'stimuli/images/fruits/gala_apple_leaf.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 3), ('probe_subtype', 'novel'), ('run_num', 3), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/scarlett_johansson.png'), ('encode_2_img', 'stimuli/images/places/royal_albert_hall.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/hagia_sophia.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 4), ('probe_subtype', 'cued'), ('run_num', 3), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/kobe_bryant.png'), ('encode_2_img', 'stimuli/images/places/harvard.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/harvard.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 5), ('probe_subtype', 'novel'), ('run_num', 3), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/aoraki.png'), ('encode_2_img', 'stimuli/images/faces/alex_rodriguez.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/alex_morgan.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 6), ('probe_subtype', 'uncued'), ('run_num', 3), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/covered_bridge.png'), ('encode_2_img', 'stimuli/images/faces/joe_biden.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/covered_bridge.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'left'), ('trial_num', 7), ('probe_subtype', 'novel'), ('run_num', 3), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/mount_fuji.png'), ('encode_2_img', 'stimuli/images/faces/blake_shelton.png'), ('replace_img', 'stimuli/images/fruits/mixed_grapes.png'), ('probe_img', 'stimuli/images/places/denali.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'right'), ('trial_num', 8), ('probe_subtype', 'lure'), ('run_num', 3), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/mount_everest.png'), ('encode_2_img', 'stimuli/images/faces/aaron_rodgers.png'), ('replace_img', 'stimuli/images/fruits/cut_cantaloupe.png'), ('probe_img', 'stimuli/images/faces/aaron_rodgers.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 9), ('probe_subtype', 'uncued'), ('run_num', 3), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/george_clooney.png'), ('encode_2_img', 'stimuli/images/fruits/pear03.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/pear03.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 10), ('probe_subtype', 'novel'), ('run_num', 3), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/penelope_cruz.png'), ('encode_2_img', 'stimuli/images/fruits/halved_watermelon02.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/green_grapes05.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 11), ('probe_subtype', 'novel'), ('run_num', 3), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/justin_bieber.png'), ('encode_2_img', 'stimuli/images/fruits/gala_apple.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/usher.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 12), ('probe_subtype', 'lure'), ('run_num', 3), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/angela_merkel.png'), ('encode_2_img', 'stimuli/images/fruits/watermelon.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/watermelon.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'left'), ('trial_num', 13), ('probe_subtype', 'lure'), ('run_num', 3), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/cantaloupe_sliced03.png'), ('encode_2_img', 'stimuli/images/faces/brad_pitt.png'), ('replace_img', 'stimuli/images/places/millau_bridge.png'), ('probe_img', 'stimuli/images/fruits/cantaloupe_sliced03.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'right'), ('trial_num', 14), ('probe_subtype', 'replacement'), ('run_num', 3), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/green_grapes.png'), ('encode_2_img', 'stimuli/images/faces/mila_kunis.png'), ('replace_img', 'stimuli/images/places/flatiron_building.png'), ('probe_img', 'stimuli/images/places/flatiron_building.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 15), ('probe_subtype', 'novel'), ('run_num', 3), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/whole_pears.png'), ('encode_2_img', 'stimuli/images/faces/rand_paul.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/chris_pratt.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 16), ('probe_subtype', 'novel'), ('run_num', 3), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/fresh_fuji.png'), ('encode_2_img', 'stimuli/images/faces/jj_watt.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/yellow_apple.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 17), ('probe_subtype', 'lure'), ('run_num', 3), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/distant_mountains.png'), ('encode_2_img', 'stimuli/images/fruits/mixed_grapes02.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/distant_mountains.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 18), ('probe_subtype', 'uncued'), ('run_num', 3), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/danyang_bridge.png'), ('encode_2_img', 'stimuli/images/fruits/leaning_pears.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/danyang_bridge.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'left'), ('trial_num', 19), ('probe_subtype', 'uncued'), ('run_num', 3), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/unique_mountains.png'), ('encode_2_img', 'stimuli/images/fruits/mixed_grapes03.png'), ('replace_img', 'stimuli/images/faces/zoe_saldana.png'), ('probe_img', 'stimuli/images/fruits/mixed_grapes03.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'right'), ('trial_num', 20), ('probe_subtype', 'novel'), ('run_num', 3), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/piza.png'), ('encode_2_img', 'stimuli/images/fruits/canteloupe_sliced04.png'), ('replace_img', 'stimuli/images/faces/ryan_reynolds.png'), ('probe_img', 'stimuli/images/fruits/sliced_watermelon03.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 21), ('probe_subtype', 'uncued'), ('run_num', 3), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes05.png'), ('encode_2_img', 'stimuli/images/places/glass_bridge.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/glass_bridge.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 22), ('probe_subtype', 'cued'), ('run_num', 3), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/honeydew_melon02.png'), ('encode_2_img', 'stimuli/images/places/matterhorn.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/matterhorn.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 23), ('probe_subtype', 'uncued'), ('run_num', 3), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/sliced_fuji.png'), ('encode_2_img', 'stimuli/images/places/gherkin.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/gherkin.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 24), ('probe_subtype', 'uncued'), ('run_num', 3), ('jitter', 4), ('rest_trigger', 1), ('encode_1_img', 'stimuli/images/fruits/pear05.png'), ('encode_2_img', 'stimuli/images/places/yellow_sand_beach.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/pear05.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 1), ('probe_subtype', 'novel'), ('run_num', 4), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/mila_kunis.png'), ('encode_2_img', 'stimuli/images/places/unique_mountains.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/pink_sand_beach.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 2), ('probe_subtype', 'cued'), ('run_num', 4), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/zoe_saldana.png'), ('encode_2_img', 'stimuli/images/places/cinderella_castle.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/cinderella_castle.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 3), ('probe_subtype', 'uncued'), ('run_num', 4), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/aaron_rodgers.png'), ('encode_2_img', 'stimuli/images/places/distant_mountains.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/distant_mountains.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 4), ('probe_subtype', 'lure'), ('run_num', 4), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/kobe_bryant.png'), ('encode_2_img', 'stimuli/images/places/gherkin.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/gherkin.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'left'), ('trial_num', 5), ('probe_subtype', 'uncued'), ('run_num', 4), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/mediterranean_beach.png'), ('encode_2_img', 'stimuli/images/faces/george_clooney.png'), ('replace_img', 'stimuli/images/fruits/mixed_grapes03.png'), ('probe_img', 'stimuli/images/faces/george_clooney.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'right'), ('trial_num', 6), ('probe_subtype', 'replacement'), ('run_num', 4), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/matterhorn.png'), ('encode_2_img', 'stimuli/images/faces/angela_merkel.png'), ('replace_img', 'stimuli/images/fruits/fresh_fuji.png'), ('probe_img', 'stimuli/images/fruits/fresh_fuji.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 7), ('probe_subtype', 'novel'), ('run_num', 4), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/mount_fuji.png'), ('encode_2_img', 'stimuli/images/faces/joe_biden.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/ripple_beach.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 8), ('probe_subtype', 'uncued'), ('run_num', 4), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/piza.png'), ('encode_2_img', 'stimuli/images/faces/alex_rodriguez.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/piza.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 9), ('probe_subtype', 'uncued'), ('run_num', 4), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/macklemore.png'), ('encode_2_img', 'stimuli/images/fruits/gala_apple_leaf.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/gala_apple_leaf.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 10), ('probe_subtype', 'uncued'), ('run_num', 4), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/penelope_cruz.png'), ('encode_2_img', 'stimuli/images/fruits/honeydew_melon02.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/penelope_cruz.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'left'), ('trial_num', 11), ('probe_subtype', 'lure'), ('run_num', 4), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/justin_bieber.png'), ('encode_2_img', 'stimuli/images/fruits/mixed_grapes05.png'), ('replace_img', 'stimuli/images/places/covered_bridge.png'), ('probe_img', 'stimuli/images/faces/justin_bieber.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'right'), ('trial_num', 12), ('probe_subtype', 'uncued'), ('run_num', 4), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/rihanna.png'), ('encode_2_img', 'stimuli/images/fruits/halved_watermelon02.png'), ('replace_img', 'stimuli/images/places/danyang_bridge.png'), ('probe_img', 'stimuli/images/faces/rihanna.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 13), ('probe_subtype', 'novel'), ('run_num', 4), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/gala_apple.png'), ('encode_2_img', 'stimuli/images/faces/jj_watt.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/michelle_obama.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 14), ('probe_subtype', 'cued'), ('run_num', 4), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes02.png'), ('encode_2_img', 'stimuli/images/faces/blake_shelton.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/blake_shelton.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 15), ('probe_subtype', 'uncued'), ('run_num', 4), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/cantaloupe_sliced03.png'), ('encode_2_img', 'stimuli/images/faces/ryan_reynolds.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/ryan_reynolds.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 16), ('probe_subtype', 'lure'), ('run_num', 4), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/pear03.png'), ('encode_2_img', 'stimuli/images/faces/lebron.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/lebron.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'left'), ('trial_num', 17), ('probe_subtype', 'replacement'), ('run_num', 4), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/flatiron_building.png'), ('encode_2_img', 'stimuli/images/fruits/leaning_pears.png'), ('replace_img', 'stimuli/images/faces/rand_paul.png'), ('probe_img', 'stimuli/images/faces/rand_paul.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'right'), ('trial_num', 18), ('probe_subtype', 'novel'), ('run_num', 4), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/millau_bridge.png'), ('encode_2_img', 'stimuli/images/fruits/whole_pears.png'), ('replace_img', 'stimuli/images/faces/brad_pitt.png'), ('probe_img', 'stimuli/images/fruits/green_grapes03.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 19), ('probe_subtype', 'novel'), ('run_num', 4), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/glass_bridge.png'), ('encode_2_img', 'stimuli/images/fruits/green_grapes.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/yellow_sand_kauai.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 20), ('probe_subtype', 'uncued'), ('run_num', 4), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/aoraki.png'), ('encode_2_img', 'stimuli/images/fruits/honeydew_half.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/aoraki.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 21), ('probe_subtype', 'novel'), ('run_num', 4), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes.png'), ('encode_2_img', 'stimuli/images/places/royal_albert_hall.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/finger_grapes.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 22), ('probe_subtype', 'novel'), ('run_num', 4), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/cut_cantaloupe.png'), ('encode_2_img', 'stimuli/images/places/harvard.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/tower_bridge.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'left'), ('trial_num', 23), ('probe_subtype', 'lure'), ('run_num', 4), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/watermelon.png'), ('encode_2_img', 'stimuli/images/places/yellow_sand_beach.png'), ('replace_img', 'stimuli/images/faces/scarlett_johansson.png'), ('probe_img', 'stimuli/images/fruits/watermelon.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'right'), ('trial_num', 24), ('probe_subtype', 'novel'), ('run_num', 4), ('jitter', 5), ('rest_trigger', 1), ('encode_1_img', 'stimuli/images/fruits/canteloupe_sliced04.png'), ('encode_2_img', 'stimuli/images/places/mount_everest.png'), ('replace_img', 'stimuli/images/faces/abby_wambach.png'), ('probe_img', 'stimuli/images/fruits/cantaloupe02.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 1), ('probe_subtype', 'uncued'), ('run_num', 5), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/blake_shelton.png'), ('encode_2_img', 'stimuli/images/places/aoraki.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/aoraki.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 2), ('probe_subtype', 'lure'), ('run_num', 5), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/justin_bieber.png'), ('encode_2_img', 'stimuli/images/places/mount_fuji.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/mount_fuji.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'left'), ('trial_num', 3), ('probe_subtype', 'replacement'), ('run_num', 5), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/macklemore.png'), ('encode_2_img', 'stimuli/images/places/unique_mountains.png'), ('replace_img', 'stimuli/images/fruits/halved_watermelon02.png'), ('probe_img', 'stimuli/images/fruits/halved_watermelon02.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'right'), ('trial_num', 4), ('probe_subtype', 'uncued'), ('run_num', 5), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/penelope_cruz.png'), ('encode_2_img', 'stimuli/images/places/distant_mountains.png'), ('replace_img', 'stimuli/images/fruits/whole_pears.png'), ('probe_img', 'stimuli/images/faces/penelope_cruz.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 5), ('probe_subtype', 'uncued'), ('run_num', 5), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/mediterranean_beach.png'), ('encode_2_img', 'stimuli/images/faces/scarlett_johansson.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/scarlett_johansson.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 6), ('probe_subtype', 'uncued'), ('run_num', 5), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/millau_bridge.png'), ('encode_2_img', 'stimuli/images/faces/rand_paul.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/millau_bridge.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 7), ('probe_subtype', 'uncued'), ('run_num', 5), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/danyang_bridge.png'), ('encode_2_img', 'stimuli/images/faces/joe_biden.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/joe_biden.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 8), ('probe_subtype', 'novel'), ('run_num', 5), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/cinderella_castle.png'), ('encode_2_img', 'stimuli/images/faces/zoe_saldana.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/azadi_monument.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'left'), ('trial_num', 9), ('probe_subtype', 'replacement'), ('run_num', 5), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/jj_watt.png'), ('encode_2_img', 'stimuli/images/fruits/gala_apple_leaf.png'), ('replace_img', 'stimuli/images/places/piza.png'), ('probe_img', 'stimuli/images/places/piza.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'right'), ('trial_num', 10), ('probe_subtype', 'lure'), ('run_num', 5), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/alex_rodriguez.png'), ('encode_2_img', 'stimuli/images/fruits/mixed_grapes03.png'), ('replace_img', 'stimuli/images/places/royal_albert_hall.png'), ('probe_img', 'stimuli/images/fruits/mixed_grapes03.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 11), ('probe_subtype', 'novel'), ('run_num', 5), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/aaron_rodgers.png'), ('encode_2_img', 'stimuli/images/fruits/leaning_pears.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/adam_levine.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 12), ('probe_subtype', 'novel'), ('run_num', 5), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/brad_pitt.png'), ('encode_2_img', 'stimuli/images/fruits/fresh_fuji.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/red_grapes04.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 13), ('probe_subtype', 'novel'), ('run_num', 5), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/honeydew_half.png'), ('encode_2_img', 'stimuli/images/faces/mila_kunis.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/faces/blake_lively.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 14), ('probe_subtype', 'uncued'), ('run_num', 5), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes.png'), ('encode_2_img', 'stimuli/images/faces/george_clooney.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/mixed_grapes.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'left'), ('trial_num', 15), ('probe_subtype', 'uncued'), ('run_num', 5), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/cut_cantaloupe.png'), ('encode_2_img', 'stimuli/images/faces/kobe_bryant.png'), ('replace_img', 'stimuli/images/places/glass_bridge.png'), ('probe_img', 'stimuli/images/faces/kobe_bryant.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'right'), ('trial_num', 16), ('probe_subtype', 'novel'), ('run_num', 5), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes02.png'), ('encode_2_img', 'stimuli/images/faces/lebron.png'), ('replace_img', 'stimuli/images/places/matterhorn.png'), ('probe_img', 'stimuli/images/fruits/red_delicious.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 17), ('probe_subtype', 'cued'), ('run_num', 5), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/covered_bridge.png'), ('encode_2_img', 'stimuli/images/fruits/gala_apple.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/covered_bridge.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 18), ('probe_subtype', 'novel'), ('run_num', 5), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/gherkin.png'), ('encode_2_img', 'stimuli/images/fruits/pear03.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/capilano_bridge.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 19), ('probe_subtype', 'lure'), ('run_num', 5), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/flatiron_building.png'), ('encode_2_img', 'stimuli/images/fruits/mixed_grapes05.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/flatiron_building.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 20), ('probe_subtype', 'uncued'), ('run_num', 5), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/harvard.png'), ('encode_2_img', 'stimuli/images/fruits/canteloupe_sliced04.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/harvard.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'left'), ('trial_num', 21), ('probe_subtype', 'novel'), ('run_num', 5), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/sliced_fuji.png'), ('encode_2_img', 'stimuli/images/places/skyway_bridge.png'), ('replace_img', 'stimuli/images/faces/rihanna.png'), ('probe_img', 'stimuli/images/fruits/red_grapes05.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'right'), ('trial_num', 22), ('probe_subtype', 'lure'), ('run_num', 5), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/watermelon.png'), ('encode_2_img', 'stimuli/images/places/yellow_sand_beach.png'), ('replace_img', 'stimuli/images/faces/angela_merkel.png'), ('probe_img', 'stimuli/images/places/yellow_sand_beach.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 23), ('probe_subtype', 'cued'), ('run_num', 5), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/honeydew_melon02.png'), ('encode_2_img', 'stimuli/images/places/alamo.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/honeydew_melon02.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 24), ('probe_subtype', 'novel'), ('run_num', 5), ('jitter', 3), ('rest_trigger', 1), ('encode_1_img', 'stimuli/images/fruits/cantaloupe_sliced03.png'), ('encode_2_img', 'stimuli/images/places/mount_everest.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/cut_pears02.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'left'), ('trial_num', 1), ('probe_subtype', 'lure'), ('run_num', 6), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/brad_pitt.png'), ('encode_2_img', 'stimuli/images/places/cinderella_castle.png'), ('replace_img', 'stimuli/images/fruits/gala_apple.png'), ('probe_img', 'stimuli/images/faces/brad_pitt.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'right'), ('trial_num', 2), ('probe_subtype', 'replacement'), ('run_num', 6), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/angela_merkel.png'), ('encode_2_img', 'stimuli/images/places/royal_albert_hall.png'), ('replace_img', 'stimuli/images/fruits/leaning_pears.png'), ('probe_img', 'stimuli/images/fruits/leaning_pears.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 3), ('probe_subtype', 'cued'), ('run_num', 6), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/justin_bieber.png'), ('encode_2_img', 'stimuli/images/places/mount_fuji.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/justin_bieber.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 4), ('probe_subtype', 'uncued'), ('run_num', 6), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/alex_rodriguez.png'), ('encode_2_img', 'stimuli/images/places/millau_bridge.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/alex_rodriguez.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 5), ('probe_subtype', 'lure'), ('run_num', 6), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/mount_everest.png'), ('encode_2_img', 'stimuli/images/faces/rihanna.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/mount_everest.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 6), ('probe_subtype', 'uncued'), ('run_num', 6), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/mediterranean_beach.png'), ('encode_2_img', 'stimuli/images/faces/kobe_bryant.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/mediterranean_beach.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'left'), ('trial_num', 7), ('probe_subtype', 'replacement'), ('run_num', 6), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/aoraki.png'), ('encode_2_img', 'stimuli/images/faces/mila_kunis.png'), ('replace_img', 'stimuli/images/fruits/canteloupe_sliced04.png'), ('probe_img', 'stimuli/images/fruits/canteloupe_sliced04.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'fruits'), ('cue_position', 'right'), ('trial_num', 8), ('probe_subtype', 'uncued'), ('run_num', 6), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/covered_bridge.png'), ('encode_2_img', 'stimuli/images/faces/zoe_saldana.png'), ('replace_img', 'stimuli/images/fruits/cantaloupe_sliced03.png'), ('probe_img', 'stimuli/images/places/covered_bridge.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 9), ('probe_subtype', 'novel'), ('run_num', 6), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/penelope_cruz.png'), ('encode_2_img', 'stimuli/images/fruits/honeydew_half.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/sliced_watermelon05.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 10), ('probe_subtype', 'novel'), ('run_num', 6), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/macklemore.png'), ('encode_2_img', 'stimuli/images/fruits/cut_cantaloupe.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/green_grapes04.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 11), ('probe_subtype', 'novel'), ('run_num', 6), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/jj_watt.png'), ('encode_2_img', 'stimuli/images/fruits/halved_watermelon02.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/fresh_red_apple.png')]), OrderedDict([('encode_1_cat', 'faces'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 12), ('probe_subtype', 'lure'), ('run_num', 6), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/faces/george_clooney.png'), ('encode_2_img', 'stimuli/images/fruits/whole_pears.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/whole_pears.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'left'), ('trial_num', 13), ('probe_subtype', 'novel'), ('run_num', 6), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/pear03.png'), ('encode_2_img', 'stimuli/images/faces/scarlett_johansson.png'), ('replace_img', 'stimuli/images/places/unique_mountains.png'), ('probe_img', 'stimuli/images/faces/vin_diesel.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'replace'), ('replace_cat', 'places'), ('cue_position', 'right'), ('trial_num', 14), ('probe_subtype', 'lure'), ('run_num', 6), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes.png'), ('encode_2_img', 'stimuli/images/faces/joe_biden.png'), ('replace_img', 'stimuli/images/places/harvard.png'), ('probe_img', 'stimuli/images/faces/joe_biden.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 15), ('probe_subtype', 'cued'), ('run_num', 6), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/gala_apple_leaf.png'), ('encode_2_img', 'stimuli/images/faces/lebron.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/fruits/gala_apple_leaf.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'faces'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 16), ('probe_subtype', 'novel'), ('run_num', 6), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/watermelon.png'), ('encode_2_img', 'stimuli/images/faces/ryan_reynolds.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/faces/selena_gomez.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 17), ('probe_subtype', 'uncued'), ('run_num', 6), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/glass_bridge.png'), ('encode_2_img', 'stimuli/images/fruits/fresh_fuji.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/fresh_fuji.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 18), ('probe_subtype', 'novel'), ('run_num', 6), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/flatiron_building.png'), ('encode_2_img', 'stimuli/images/fruits/mixed_grapes02.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/muskmelon02.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'left'), ('trial_num', 19), ('probe_subtype', 'uncued'), ('run_num', 6), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/matterhorn.png'), ('encode_2_img', 'stimuli/images/fruits/honeydew_melon02.png'), ('replace_img', 'stimuli/images/faces/aaron_rodgers.png'), ('probe_img', 'stimuli/images/fruits/honeydew_melon02.png')]), OrderedDict([('encode_1_cat', 'places'), ('encode_2_cat', 'fruits'), ('operation', 'replace'), ('replace_cat', 'faces'), ('cue_position', 'right'), ('trial_num', 20), ('probe_subtype', 'novel'), ('run_num', 6), ('jitter', 4), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/places/danyang_bridge.png'), ('encode_2_img', 'stimuli/images/fruits/mixed_grapes05.png'), ('replace_img', 'stimuli/images/faces/blake_shelton.png'), ('probe_img', 'stimuli/images/places/white_sand_beach.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 21), ('probe_subtype', 'uncued'), ('run_num', 6), ('jitter', 3), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/mixed_grapes03.png'), ('encode_2_img', 'stimuli/images/places/distant_mountains.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/distant_mountains.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'maintain'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 22), ('probe_subtype', 'novel'), ('run_num', 6), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/sliced_fuji.png'), ('encode_2_img', 'stimuli/images/places/piza.png'), ('replace_img', 'stimuli/cues/maintain_cue_image.png'), ('probe_img', 'stimuli/images/places/swedish_bridge.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'left'), ('trial_num', 23), ('probe_subtype', 'uncued'), ('run_num', 6), ('jitter', 5), ('rest_trigger', 0), ('encode_1_img', 'stimuli/images/fruits/pear05.png'), ('encode_2_img', 'stimuli/images/places/yellow_sand_beach.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/places/yellow_sand_beach.png')]), OrderedDict([('encode_1_cat', 'fruits'), ('encode_2_cat', 'places'), ('operation', 'suppress'), ('replace_cat', None), ('cue_position', 'right'), ('trial_num', 24), ('probe_subtype', 'uncued'), ('run_num', 6), ('jitter', 5), ('rest_trigger', 1), ('encode_1_img', 'stimuli/images/fruits/green_grapes.png'), ('encode_2_img', 'stimuli/images/places/alamo.png'), ('replace_img', 'stimuli/cues/suppress_cue_image.png'), ('probe_img', 'stimuli/images/fruits/green_grapes.png')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$stim_list" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="name" updates="None" val="trials" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="Encode"/>
+    <Routine name="Delay_2000"/>
+    <Routine name="Manipulate"/>
+    <Routine name="Delay_4000"/>
+    <Routine name="Probe"/>
+    <Routine name="ITI"/>
+    <LoopInitiator loopType="TrialHandler" name="rest_loop">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="False" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="rest_trigger" valType="num"/>
+      <Param name="name" updates="None" val="rest_loop" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="Rest"/>
+    <Routine name="Trial_prepare"/>
+    <LoopTerminator name="rest_loop"/>
+    <LoopTerminator name="trials"/>
+  </Flow>
+</PsychoPy2experiment>

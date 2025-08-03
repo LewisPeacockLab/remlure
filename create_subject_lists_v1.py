@@ -21,7 +21,7 @@ except NameError:
 # create a subject specific folder to save all lists
 list_foldername = os.path.join(_thisDir, "subject lists", f"sub-{participant_number}")
 
-phase_subFolder = ["localizer", "main_task"]
+phase_subFolder = "main_task"
 
 # Create the subject folder if it doesn't exist
 if not os.path.exists(list_foldername):
@@ -31,14 +31,13 @@ else:
     print(f"List folder already exists for sub-{participant_number}...")
 
 # Create each phase subfolder within the subject's folder
-for subfolder in phase_subFolder:
-    phase_folder_path = os.path.join(list_foldername, subfolder)
-    # Create the phase folder
-    if not os.path.exists(phase_folder_path):
-        os.makedirs(phase_folder_path)
-        print(f"Created phase folder: {subfolder}")
-    else:
-        print(f"Phase folder '{subfolder}' already exists...")
+phase_folder_path = os.path.join(list_foldername, phase_subFolder)
+# Create the phase folder
+if not os.path.exists(phase_folder_path):
+    os.makedirs(phase_folder_path)
+    print(f"Created phase folder: {phase_subFolder}")
+else:
+    print(f"Phase folder '{phase_subFolder}' already exists...")
 
 #### SETUP STIMULUS MASTER LISTS ####
 # set a random seed
@@ -279,7 +278,7 @@ def select_stim(probecounter, crs_list, stimsdict, useprobe=True,
                     stimsdict[oper][cuestatus][imgcat].remove(s)    # remove stim from stims dict
                     crs_list.append(s)    # add stim to current run stims
                     return s
-    print("No stimuli selected")
+    # print("No stimuli selected")
     return None
 
 def check_trials(imglist: list, numtrials: int):
@@ -294,6 +293,7 @@ def check_trials(imglist: list, numtrials: int):
 
 # initiate a list to store the stims
 check = False
+retries = 0
 # Set the operation cue images
 opcue_dict = {"maintain": "stimuli/cues/maintain_cue_image.png",
               "suppress": "stimuli/cues/suppress_cue_image.png",}
@@ -328,7 +328,7 @@ while not check:
         run_check = False
         t = 0
         # Try to use probe as much as possible
-        print("now using probe counter")
+        # print("now using probe counter")
         useprobe = True
         while not run_check:
             random.seed()
@@ -391,13 +391,13 @@ while not check:
 
             # Perform a check for the run
             run_check = check_trials(run_image_list, run_len)
-            print("run = ", run)
-            print("runcheck = ", run_check)
+            # print("run = ", run)
+            # print("runcheck = ", run_check)
             t += 1
             if t > 5:
-                print("now turning useprobe to False")
+                # print("now turning useprobe to False")
                 useprobe = False
-            elif t > 10:
+            if t > 10:
                 break
         # If run passes check, overwrite all ongoing saves onto counters/lists
         image_list += run_image_list
@@ -405,24 +405,30 @@ while not check:
         stims_dict = run_stims_dict
         novel_stims_dict = run_novel_stims_dict
     if len(image_list) == total_trials:
-        print("completed build, now checking")
+        print("completed build, now checking...")
         check = check_trials(image_list, total_trials)
     else:
         print(len(image_list))
         print("DNF, restarting...")
         continue
-# Add stims to df
-mainTask_df["encode_1_img"] = [i["left"] for i in image_list]
-mainTask_df["encode_2_img"] = [i["right"] for i in image_list]
-mainTask_df["replace_img"] = [i["replacement"] for i in image_list]
-mainTask_df["probe_img"] = [i["probe"] for i in image_list]
+    retries += 1
+    if retries > 20:
+        break
+if retries > 20:
+    # Use a premade stim list
+    premade_infile = f"stimuli/csvs/maintask_stimlists/main_stim_list_{random.randint(0,9)}.csv"
+    print(f"using pre-made stim list {os.path.split(premade_infile)[1]}")
+    mainTask_df = pd.read_csv(premade_infile)
+else:
+    # Add stims to df
+    mainTask_df["encode_1_img"] = [i["left"] for i in image_list]
+    mainTask_df["encode_2_img"] = [i["right"] for i in image_list]
+    mainTask_df["replace_img"] = [i["replacement"] for i in image_list]
+    mainTask_df["probe_img"] = [i["probe"] for i in image_list]
 
-# benchmark
-mainTask_df.to_csv(
-    f"{_thisDir}/remlure_mainTask_benchmark_v1.csv", index=False
-)
-
+mainTask_df_infile = f"{list_foldername}/main_task/main_stim_list.csv"
 # Save to maintask folder
-# mainTask_df.to_csv(
-#     f"{list_foldername}/main_task/main_stim_list.csv", index=False
-# )
+mainTask_df.to_csv(
+    mainTask_df_infile , index=False
+)
+stim_list = mainTask_df_infile
