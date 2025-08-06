@@ -1,0 +1,7 @@
+encode_1_cat,encode_2_cat,operation,replace_cat,cue_position,trial_num,probe_subtype,run_num,jitter,rest_trigger,encode_1_img,encode_2_img,replace_img,probe_img
+faces,places,maintain,,left,prac_1,cued,practice,3,0,stimuli/images/faces/michael_phelps.png,stimuli/images/places/river_bridge.png,stimuli/cues/maintain_cue_image.png,stimuli/images/faces/michael_phelps.png
+faces,fruits,maintain,,left,prac_2,novel,practice,4,0,stimuli/images/faces/sandra_bullock.png,stimuli/images/fruits/fresh_red_apple.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/pear04.png
+places,fruits,suppress,,right,prac_3,uncued,practice,3,0,stimuli/images/places/pink_sand_beach.png,stimuli/images/fruits/muskmelon02.png,stimuli/cues/suppress_cue_image.png,stimuli/images/places/pink_sand_beach.png
+fruits,faces,suppress,,right,prac_4,lure,practice,5,0,stimuli/images/fruits/honeydew.png,stimuli/images/faces/maria_sharapova.png,stimuli/cues/suppress_cue_image.png,stimuli/images/faces/maria_sharapova.png
+fruits,places,replace,faces,left,prac_5,novel,practice,4,0,stimuli/images/fruits/sliced_honeydew.png,stimuli/images/places/supreme_court.png,stimuli/images/faces/willie_nelson.png,stimuli/images/fruits/apple03a.png
+places,faces,replace,fruits,right,prac_6,replacement,practice,5,0,stimuli/images/places/japanese_castle.png,stimuli/images/faces/queen_elizabeth_with_crown.png,stimuli/images/fruits/half_apple.png,stimuli/images/fruits/half_apple.png

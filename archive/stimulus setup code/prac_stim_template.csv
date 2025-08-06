@@ -1,0 +1,7 @@
+﻿encode_1_cat,encode_2_cat,operation,replace_cat,cue_position,trial_num,probe_subtype,run_num,jitter,rest_trigger
+faces,places,maintain,NA,left,prac_1,cued,practice,3,0
+faces,fruits,maintain,NA,left,prac_2,novel,practice,4,0
+places,fruits,suppress,NA,right,prac_3,uncued,practice,3,0
+fruits,faces,suppress,NA,right,prac_4,lure,practice,5,0
+fruits,places,replace,faces,left,prac_5,novel,practice,4,0
+places,faces,replace,fruits,right,prac_6,replacement,practice,5,0
