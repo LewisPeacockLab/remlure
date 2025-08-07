@@ -237,7 +237,7 @@ for i in range(num_runs):
 mainTask_df["jitter"] = jitter
 
 # Add rest trigger
-mainTask_df["rest_trigger"] = [int(r.trial_num == run_len) for _, r in mainTask_df.iterrows()]
+mainTask_df["rest_trigger"] = [int(r.trial_num == run_len) if i != (total_trials - 1) else 0 for i, r in mainTask_df.iterrows()]
 
 ## Select stims for each trial
 def select_stim(probecounter, crs_list, stimsdict, useprobe=True,
