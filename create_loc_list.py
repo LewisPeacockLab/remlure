@@ -63,6 +63,12 @@ locstim_df["trial_num"] = [i for i in range(1, locstim_df.shape[0] + 1)]
 # add rest trigger
 locstim_df["rest_trigger"] = [int(not (i % run_len)) if i < total_runs else 0 for i in range(1, stims_df.shape[0] + 1)]
 
+# Add jitter, randomized within run
+jitter = []
+for i in range(num_runs):
+    jitter += np.random.permutation([3, 4, 5] * (run_len // 3)).tolist()
+locstim_df["jitter"] = jitter
+
 locstim_df_infile = f"{phase_folder_path}/loc_stim_list.csv"
 # Save to maintask folder
 locstim_df.to_csv(
