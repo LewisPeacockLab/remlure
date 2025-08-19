@@ -142,4 +142,4 @@ places,fruits,replace,faces,right,20,lure,6,5,0,stimuli/images/places/flatiron_b
 fruits,places,maintain,NA,left,21,cued,6,3,0,stimuli/images/fruits/pear03.png,stimuli/images/places/cinderella_castle.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/pear03.png
 fruits,places,maintain,NA,right,22,uncued,6,4,0,stimuli/images/fruits/mixed_grapes02.png,stimuli/images/places/piza.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/mixed_grapes02.png
 fruits,places,suppress,NA,left,23,uncued,6,5,0,stimuli/images/fruits/canteloupe_sliced04.png,stimuli/images/places/harvard.png,stimuli/cues/suppress_cue_image.png,stimuli/images/places/harvard.png
-fruits,places,suppress,NA,right,24,uncued,6,5,1,stimuli/images/fruits/mixed_grapes.png,stimuli/images/places/royal_albert_hall.png,stimuli/cues/suppress_cue_image.png,stimuli/images/fruits/mixed_grapes.png
+fruits,places,suppress,NA,right,24,uncued,6,5,0,stimuli/images/fruits/mixed_grapes.png,stimuli/images/places/royal_albert_hall.png,stimuli/cues/suppress_cue_image.png,stimuli/images/fruits/mixed_grapes.png

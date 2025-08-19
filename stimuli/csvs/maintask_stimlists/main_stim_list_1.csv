@@ -142,4 +142,4 @@ places,fruits,replace,faces,right,20,lure,6,5,0,stimuli/images/places/mediterran
 fruits,places,maintain,NA,left,21,cued,6,3,0,stimuli/images/fruits/gala_apple.png,stimuli/images/places/covered_bridge.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/gala_apple.png
 fruits,places,maintain,NA,right,22,uncued,6,4,0,stimuli/images/fruits/canteloupe_sliced04.png,stimuli/images/places/mount_everest.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/canteloupe_sliced04.png
 fruits,places,suppress,NA,left,23,uncued,6,5,0,stimuli/images/fruits/fresh_fuji.png,stimuli/images/places/aoraki.png,stimuli/cues/suppress_cue_image.png,stimuli/images/places/aoraki.png
-fruits,places,suppress,NA,right,24,uncued,6,5,1,stimuli/images/fruits/honeydew_half.png,stimuli/images/places/cinderella_castle.png,stimuli/cues/suppress_cue_image.png,stimuli/images/fruits/honeydew_half.png
+fruits,places,suppress,NA,right,24,uncued,6,5,0,stimuli/images/fruits/honeydew_half.png,stimuli/images/places/cinderella_castle.png,stimuli/cues/suppress_cue_image.png,stimuli/images/fruits/honeydew_half.png

@@ -142,4 +142,4 @@ places,fruits,replace,faces,right,20,lure,6,5,0,stimuli/images/places/covered_br
 fruits,places,maintain,NA,left,21,cued,6,3,0,stimuli/images/fruits/mixed_grapes05.png,stimuli/images/places/mount_fuji.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/mixed_grapes05.png
 fruits,places,maintain,NA,right,22,uncued,6,4,0,stimuli/images/fruits/green_grapes.png,stimuli/images/places/danyang_bridge.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/green_grapes.png
 fruits,places,suppress,NA,left,23,uncued,6,5,0,stimuli/images/fruits/halved_watermelon02.png,stimuli/images/places/yellow_sand_beach.png,stimuli/cues/suppress_cue_image.png,stimuli/images/places/yellow_sand_beach.png
-fruits,places,suppress,NA,right,24,uncued,6,5,1,stimuli/images/fruits/mixed_grapes.png,stimuli/images/places/millau_bridge.png,stimuli/cues/suppress_cue_image.png,stimuli/images/fruits/mixed_grapes.png
+fruits,places,suppress,NA,right,24,uncued,6,5,0,stimuli/images/fruits/mixed_grapes.png,stimuli/images/places/millau_bridge.png,stimuli/cues/suppress_cue_image.png,stimuli/images/fruits/mixed_grapes.png

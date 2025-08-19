@@ -142,4 +142,4 @@ places,fruits,replace,faces,right,20,lure,6,5,0,stimuli/images/places/unique_mou
 fruits,places,maintain,NA,left,21,cued,6,3,0,stimuli/images/fruits/green_grapes.png,stimuli/images/places/harvard.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/green_grapes.png
 fruits,places,maintain,NA,right,22,uncued,6,4,0,stimuli/images/fruits/gala_apple.png,stimuli/images/places/mount_everest.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/gala_apple.png
 fruits,places,suppress,NA,left,23,uncued,6,5,0,stimuli/images/fruits/gala_apple_leaf.png,stimuli/images/places/gherkin.png,stimuli/cues/suppress_cue_image.png,stimuli/images/places/gherkin.png
-fruits,places,suppress,NA,right,24,uncued,6,5,1,stimuli/images/fruits/watermelon.png,stimuli/images/places/royal_albert_hall.png,stimuli/cues/suppress_cue_image.png,stimuli/images/fruits/watermelon.png
+fruits,places,suppress,NA,right,24,uncued,6,5,0,stimuli/images/fruits/watermelon.png,stimuli/images/places/royal_albert_hall.png,stimuli/cues/suppress_cue_image.png,stimuli/images/fruits/watermelon.png

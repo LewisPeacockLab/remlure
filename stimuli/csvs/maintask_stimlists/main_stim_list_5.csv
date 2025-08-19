@@ -142,4 +142,4 @@ places,fruits,replace,faces,right,20,lure,6,5,0,stimuli/images/places/flatiron_b
 fruits,places,maintain,NA,left,21,cued,6,3,0,stimuli/images/fruits/whole_pears.png,stimuli/images/places/distant_mountains.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/whole_pears.png
 fruits,places,maintain,NA,right,22,uncued,6,4,0,stimuli/images/fruits/fresh_fuji.png,stimuli/images/places/gherkin.png,stimuli/cues/maintain_cue_image.png,stimuli/images/fruits/fresh_fuji.png
 fruits,places,suppress,NA,left,23,uncued,6,5,0,stimuli/images/fruits/honeydew_melon02.png,stimuli/images/places/unique_mountains.png,stimuli/cues/suppress_cue_image.png,stimuli/images/places/unique_mountains.png
-fruits,places,suppress,NA,right,24,uncued,6,5,1,stimuli/images/fruits/green_grapes.png,stimuli/images/places/matterhorn.png,stimuli/cues/suppress_cue_image.png,stimuli/images/fruits/green_grapes.png
+fruits,places,suppress,NA,right,24,uncued,6,5,0,stimuli/images/fruits/green_grapes.png,stimuli/images/places/matterhorn.png,stimuli/cues/suppress_cue_image.png,stimuli/images/fruits/green_grapes.png
