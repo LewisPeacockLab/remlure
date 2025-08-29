@@ -64,7 +64,6 @@ class ParticipantData(object):
         return np.mean(self.wm_df["correct"]) if self.pass_check else 0
 
 
-
 class MasterDF(object):
     operation_conditions = ["maintain", "suppress", "replace"]
     probe_conditions = ["cued", "uncued", "replacement", "lure", "novel"]
@@ -169,6 +168,7 @@ def vis_compare(data=None, y=None, x="operation", hue="probe_subtype", cut=0,
         return plot
 
 data_dir = "data/online_pilot"
+fig_dir = "figures/online_pilot"
 
 # Initiate a list to store ParticipantData objects
 p_data_list = []
@@ -190,6 +190,7 @@ vis_compare(master.mdf,
             type="bar",
             )
 plt.title(f"Accuracy across different probes N={master.n_participants()}")
+plt.savefig(f"{fig_dir}/acc.png")
 plt.show()
 
 vis_compare(master.corr(),
@@ -198,4 +199,6 @@ vis_compare(master.corr(),
             ylim=(0.55, 1.2)
             )
 plt.title(f"RT across different probes (correct responses only) N={master.n_participants()}")
+plt.savefig(f"{fig_dir}/rt.png")
 plt.show()
+
