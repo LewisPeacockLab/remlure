@@ -221,7 +221,7 @@ master.mdf["probetype"] = [t if t != "lure" else "cued" for t in master.mdf.prob
 ########################################################################################################################
 # Look at accuracy
 # Examine anova
-anova = sm.stats.AnovaRM(data=master.mdf[(master.mdf.operation != "suppress") & (master.mdf.probetype != "novel") & (master.mdf.probetype != "replacement")],
+anova = sm.stats.AnovaRM(data=master.mdf[(master.mdf.operation != "maintain") & (master.mdf.probetype != "novel") & (master.mdf.probetype != "replacement")],
                          depvar="correct",
                          subject="participant",
                          within=["operation", "probetype"],
@@ -301,7 +301,7 @@ pairwise = pg.pairwise_tests(data=df,
                              subject="participant",
                              padjust="bonf",
                              )
-# pairwise.to_csv("pairwise1.csv", index=False)
+# pairwise.to_csv("pairwise.csv", index=False)
 
 
 
@@ -384,7 +384,7 @@ df = mean_rt[(mean_rt.probetype != "novel") & (mean_rt.probetype != "replacement
 
 pairwise = pg.pairwise_tests(data=df,
                              dv="rt",
-                             within=["operation", "probetype", ],    #
+                             within=["probetype", "operation", ],    #
                              subject="participant",
                              padjust="bonf",
                              )
