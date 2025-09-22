@@ -221,7 +221,7 @@ master.mdf["probetype"] = [t if t != "lure" else "cued" for t in master.mdf.prob
 ########################################################################################################################
 # Look at accuracy
 # Examine anova
-anova = sm.stats.AnovaRM(data=master.mdf[(master.mdf.probetype != "replacement") & (master.mdf.probetype != "novel")],
+anova = sm.stats.AnovaRM(data=master.mdf[(master.mdf.operation != "suppress") & (master.mdf.probetype != "novel") & (master.mdf.probetype != "replacement")],
                          depvar="correct",
                          subject="participant",
                          within=["operation", "probetype"],
@@ -248,6 +248,15 @@ fontsize=14
 plt.figure(figsize=(6, 5))
 data = master.mdf[master.mdf.probetype != "novel"]
 y="correct"
+# axp = sns.violinplot(data=data,
+#                  y=y,
+#                  x="operation",
+#                  hue="probetype",
+#                  hue_order=["cued", "uncued", "replacement"],
+#                  order=["maintain", "suppress", "replace"],
+#                  palette=colors,
+#                  # width=1,
+#                  )
 ax = sns.barplot(data=data,
                  y=y,
                  x="operation",
@@ -266,7 +275,7 @@ plot = sns.stripplot(data=data.groupby(["participant", "operation", "probetype",
                      y=y,
                      hue="probetype",
                      dodge=True, size=2,
-                     palette=darkcolors,
+                     color="lightgray",
                      hue_order=["cued", "uncued", "replacement"],
                      native_scale=True,
                      )
@@ -276,22 +285,36 @@ plt.title("", fontsize=fontsize)
 plt.xlabel("Operation")
 plt.ylabel("Accuracy", fontsize=fontsize+2)
 plt.legend().remove()
-# plt.savefig(f"{fig_root}/cued_sem_oper_acc.svg")
+plt.savefig(f"{fig_dir}/oper_probetype_acc.svg")
 plt.show()
 
+# average within participant
+mean_acc = master.mdf.groupby(["participant", "operation", "probetype",]).mean(["correct"]).reset_index()
 
-pairwise = pg.pairwise_tests(data=mean_acc,
+# subselect
+df = mean_acc[(mean_acc.probetype != "novel") & (mean_acc.probetype != "replacement")]
+# df = mean_acc[mean_acc.operation == "replace"]
+
+pairwise = pg.pairwise_tests(data=df,
                              dv="correct",
-                             within=["operation", "probe_cond", ],
+                             within=["probetype", "operation", ],    #
                              subject="participant",
                              padjust="bonf",
                              )
-# pairwise.to_csv("pairwise.csv", index=False)
+# pairwise.to_csv("pairwise1.csv", index=False)
 
 
 
 ########################################################################################################################
 # Look at RT
+# Examine anova
+anova = sm.stats.AnovaRM(data=master.mdf[(master.mdf.operation != "suppress") & (master.mdf.probetype != "novel") & (master.mdf.probetype != "replacement")],
+                         depvar="rt",
+                         subject="participant",
+                         within=["operation", "probetype"],
+                         aggregate_func='mean',
+                         ).fit()
+print(anova)
 
 
 vis_compare(master.corr(),
@@ -304,3 +327,66 @@ vis_compare(master.corr(),
             ).set(title=f"RT across different probes (correct responses only) N={master.n_participants()}")
 # plt.savefig(f"{fig_dir}/rt.png")
 plt.show()
+
+
+
+# Graph operation on RT (figure)
+fontsize=14
+plt.figure(figsize=(6, 5))
+data = master.mdf[master.mdf.probetype != "novel"]
+y="rt"
+# axp = sns.violinplot(data=data,
+#                  y=y,
+#                  x="operation",
+#                  hue="probetype",
+#                  hue_order=["cued", "uncued", "replacement"],
+#                  order=["maintain", "suppress", "replace"],
+#                  palette=colors,
+#                  # width=1,
+#                  )
+ax = sns.barplot(data=data,
+                 y=y,
+                 x="operation",
+                 hue="probetype",
+                 hue_order=["cued", "uncued", "replacement"],
+                 order=["maintain", "suppress", "replace"],
+                 err_kws={"linewidth":1.5, "color":"black"},
+                 capsize=0.2,
+                 palette=colors,
+                 errorbar=('ci', 95),
+                 # width=1,
+                 )
+ax.set_ylim(0.7, 1.1)
+plot = sns.stripplot(data=data.groupby(["participant", "operation", "probetype",]).mean(y).reset_index(),
+                     x="operation",
+                     y=y,
+                     hue="probetype",
+                     dodge=True, size=2,
+                     palette="dark:lightgray",
+                     hue_order=["cued", "uncued", "replacement"],
+                     native_scale=True,
+                     )
+plt.xticks(fontsize=fontsize)
+plt.yticks(fontsize=fontsize)
+plt.title("", fontsize=fontsize)
+plt.xlabel("Operation")
+plt.ylabel("RT", fontsize=fontsize+2)
+plt.legend().remove()
+plt.savefig(f"{fig_dir}/oper_probetype_rt.svg")
+plt.show()
+
+# average within participant
+mean_rt = master.mdf.groupby(["participant", "operation", "probetype",]).mean(["rt"]).reset_index()
+
+# subselect
+df = mean_rt[(mean_rt.probetype != "novel") & (mean_rt.probetype != "replacement")]
+# df = mean_rt[mean_rt.operation == "replace"]
+
+pairwise = pg.pairwise_tests(data=df,
+                             dv="rt",
+                             within=["operation", "probetype", ],    #
+                             subject="participant",
+                             padjust="bonf",
+                             )
+# pairwise.to_csv("pairwise.csv", index=False)
+
