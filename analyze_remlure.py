@@ -4,6 +4,8 @@ from datetime import datetime
 import os
 import seaborn as sns
 import matplotlib.pyplot as plt
+import statsmodels.api as sm
+import pingouin as pg
 
 
 class ParticipantData(object):
@@ -76,8 +78,23 @@ class MasterDF(object):
         """
         self.p_data_list = p_data_list
         self.excluded_list = []
+        self.excl_criteria = excl_criteria
         # extract the master dataframe
-        self.mdf = self.extract_mdf(self.p_data_list, excl_criteria=excl_criteria)
+        self.mdf = self.extract_mdf(self.p_data_list, excl_criteria=self.excl_criteria)
+
+    def find_sub(self, participant):
+        sublist = [p for p in self.p_data_list if p.participant == int(participant)]
+        if sublist:
+            if len(sublist) > 1:
+                return sublist
+            else:
+                return sublist[0]
+
+    def select_daterange(self, beforedate, afterdate=None):
+        if afterdate is None:
+            afterdate = datetime(2025, 1, 1)
+        return [p for p in self.p_data_list if p.date > afterdate and p.date < beforedate]
+
 
     def n_participants(self):
         return self.mdf["participant"].nunique()
@@ -176,29 +193,114 @@ for file in os.listdir(data_dir):
     if file.endswith(".csv"):
         p_data_list.append(ParticipantData(os.path.join(data_dir, file)))
 # Load the participant data list into a MasterDF object
-master = MasterDF(p_data_list)
+master = MasterDF(p_data_list, excl_criteria={"o_threshold": 0.15, "a_threshold": 0.674})    # tot_accuracy sd=0.174 (chance + 1sd = 0.674)
+
+# Select date range
+master2 = MasterDF(master.select_daterange(datetime(2025, 9, 8)))
+master=master2
 
 # Get mean accuracy
 print("N =", master.n_participants())
 print("mean accuracy =", np.round(master.mean_accuracy(), 2))
 print("N_excluded =", len(master.excluded_list))
 
+########################################################################################################################
+# For graphing
+# Initiate colors
+colors = {"uncued": "gray",
+          "cued": "blue",
+          "lure": "orange",
+          "replacement": "purple",}
+darkcolors = {"cued": "lightblue",
+              "uncued": "darkgray",
+              "replacement": "magenta"}
+# Add a helper column to rename "lure" into "cued"
+master.mdf["probetype"] = [t if t != "lure" else "cued" for t in master.mdf.probe_subtype]
+
+
+########################################################################################################################
+# Look at accuracy
+# Examine anova
+anova = sm.stats.AnovaRM(data=master.mdf[(master.mdf.probetype != "replacement") & (master.mdf.probetype != "novel")],
+                         depvar="correct",
+                         subject="participant",
+                         within=["operation", "probetype"],
+                         aggregate_func='mean',
+                         ).fit()
+print(anova)
+
 # Visualize prelim
 vis_compare(master.mdf,
             y="correct",
-            ylim=(0.4, 1),
+            hue="probe_subtype",
+            ylim=(0.3, 1),
+            order=["maintain", "suppress", "replace"],
+            hue_order=["cued", "uncued", "replacement", "lure", "novel"],
             type="bar",
             )
 plt.title(f"Accuracy across different probes N={master.n_participants()}")
-plt.savefig(f"{fig_dir}/acc.png")
+# plt.savefig(f"{fig_dir}/acc.png")
 plt.show()
+
+
+# Graph operation on accuracy (figure)
+fontsize=14
+plt.figure(figsize=(6, 5))
+data = master.mdf[master.mdf.probetype != "novel"]
+y="correct"
+ax = sns.barplot(data=data,
+                 y=y,
+                 x="operation",
+                 hue="probetype",
+                 hue_order=["cued", "uncued", "replacement"],
+                 order=["maintain", "suppress", "replace"],
+                 err_kws={"linewidth":1.5, "color":"black"},
+                 capsize=0.2,
+                 palette=colors,
+                 errorbar=('ci', 95),
+                 # width=1,
+                 )
+ax.set_ylim(0.3, 1)
+plot = sns.stripplot(data=data.groupby(["participant", "operation", "probetype",]).mean(y).reset_index(),
+                     x="operation",
+                     y=y,
+                     hue="probetype",
+                     dodge=True, size=2,
+                     palette=darkcolors,
+                     hue_order=["cued", "uncued", "replacement"],
+                     native_scale=True,
+                     )
+plt.xticks(fontsize=fontsize)
+plt.yticks(fontsize=fontsize)
+plt.title("", fontsize=fontsize)
+plt.xlabel("Operation")
+plt.ylabel("Accuracy", fontsize=fontsize+2)
+plt.legend().remove()
+# plt.savefig(f"{fig_root}/cued_sem_oper_acc.svg")
+plt.show()
+
+
+pairwise = pg.pairwise_tests(data=mean_acc,
+                             dv="correct",
+                             within=["operation", "probe_cond", ],
+                             subject="participant",
+                             padjust="bonf",
+                             )
+# pairwise.to_csv("pairwise.csv", index=False)
+
+
+
+########################################################################################################################
+# Look at RT
+
 
 vis_compare(master.corr(),
             y="rt",
+            hue="probe_subtype",
             type="bar",
+            order=["maintain", "suppress", "replace"],
+            hue_order=["cued", "uncued", "replacement", "lure", "novel"],
             ylim=(0.55, 1.2)
-            )
-plt.title(f"RT across different probes (correct responses only) N={master.n_participants()}")
-plt.savefig(f"{fig_dir}/rt.png")
+            ).set(title=f"RT across different probes (correct responses only) N={master.n_participants()}")
+# plt.savefig(f"{fig_dir}/rt.png")
 plt.show()
-
