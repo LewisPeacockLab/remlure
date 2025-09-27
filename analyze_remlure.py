@@ -95,6 +95,8 @@ class MasterDF(object):
             afterdate = datetime(2025, 1, 1)
         return [p for p in self.p_data_list if p.date > afterdate and p.date < beforedate]
 
+    def accuracy_sd(self):
+        return np.std([p.tot_accuracy() for p in self.p_data_list if p.pass_check])
 
     def n_participants(self):
         return self.mdf["participant"].nunique()
@@ -193,11 +195,12 @@ for file in os.listdir(data_dir):
     if file.endswith(".csv"):
         p_data_list.append(ParticipantData(os.path.join(data_dir, file)))
 # Load the participant data list into a MasterDF object
-master = MasterDF(p_data_list, excl_criteria={"o_threshold": 0.15, "a_threshold": 0.674})    # tot_accuracy sd=0.174 (chance + 1sd = 0.674)
+master = MasterDF(p_data_list, excl_criteria={"o_threshold": 0.15, "a_threshold": 0.671})    # tot_accuracy sd=0.174 (chance + 1sd = 0.674)
 
-# Select date range
-master2 = MasterDF(master.select_daterange(datetime(2025, 9, 8)))
-master=master2
+
+# # Select date range
+# master2 = MasterDF(master.select_daterange(datetime(2025, 9, 24)))
+# master=master2
 
 # Get mean accuracy
 print("N =", master.n_participants())
@@ -210,6 +213,7 @@ print("N_excluded =", len(master.excluded_list))
 colors = {"uncued": "gray",
           "cued": "blue",
           "lure": "orange",
+          "novel": "crimson",
           "replacement": "purple",}
 darkcolors = {"cued": "lightblue",
               "uncued": "darkgray",
@@ -217,14 +221,17 @@ darkcolors = {"cued": "lightblue",
 # Add a helper column to rename "lure" into "cued"
 master.mdf["probetype"] = [t if t != "lure" else "cued" for t in master.mdf.probe_subtype]
 
+# Add a column to combine suppress and replace
+master.mdf["removal"] = ["remove" if t != "maintain" else t for t in master.mdf.operation]
 
 ########################################################################################################################
 # Look at accuracy
 # Examine anova
-anova = sm.stats.AnovaRM(data=master.mdf[(master.mdf.operation != "maintain") & (master.mdf.probetype != "novel") & (master.mdf.probetype != "replacement")],
+# master.mdf[(master.mdf.operation != "maintain") & (master.mdf.probetype != "novel") & (master.mdf.probetype != "replacement")] (master.mdf.operation != "replace") &
+anova = sm.stats.AnovaRM(data=master.mdf[(master.mdf.operation != "replace") & (master.mdf.probetype != "uncued") & (master.mdf.probetype != "replacement")],
                          depvar="correct",
                          subject="participant",
-                         within=["operation", "probetype"],
+                         within=["probetype", "operation"],    # "operation"
                          aggregate_func='mean',
                          ).fit()
 print(anova)
@@ -246,7 +253,7 @@ plt.show()
 # Graph operation on accuracy (figure)
 fontsize=14
 plt.figure(figsize=(6, 5))
-data = master.mdf[master.mdf.probetype != "novel"]
+data = master.mdf[(master.mdf.probetype != "uncued") & (master.mdf.probetype != "replacement")]
 y="correct"
 # axp = sns.violinplot(data=data,
 #                  y=y,
@@ -261,7 +268,8 @@ ax = sns.barplot(data=data,
                  y=y,
                  x="operation",
                  hue="probetype",
-                 hue_order=["cued", "uncued", "replacement"],
+                 # hue_order=["cued", "uncued", "replacement"],
+                 hue_order=["cued", "novel"],
                  order=["maintain", "suppress", "replace"],
                  err_kws={"linewidth":1.5, "color":"black"},
                  capsize=0.2,
@@ -275,31 +283,39 @@ plot = sns.stripplot(data=data.groupby(["participant", "operation", "probetype",
                      y=y,
                      hue="probetype",
                      dodge=True, size=2,
-                     color="lightgray",
-                     hue_order=["cued", "uncued", "replacement"],
+                     # color="lightgray",
+                     palette="Greys",
+                     # hue_order=["cued", "uncued", "replacement"],
+                     hue_order=["cued", "novel"],
                      native_scale=True,
                      )
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
+ax.spines['left'].set_visible(False)
 plt.xticks(fontsize=fontsize)
 plt.yticks(fontsize=fontsize)
 plt.title("", fontsize=fontsize)
 plt.xlabel("Operation")
 plt.ylabel("Accuracy", fontsize=fontsize+2)
 plt.legend().remove()
-plt.savefig(f"{fig_dir}/oper_probetype_acc.svg")
+plt.savefig(f"{fig_dir}/oper_maninove_acc1.svg")
 plt.show()
 
 # average within participant
-mean_acc = master.mdf.groupby(["participant", "operation", "probetype",]).mean(["correct"]).reset_index()
+mean_acc = master.mdf.groupby(["participant", "operation", "probetype", ]).mean(["correct"]).reset_index()
+# mean_acc = master.mdf.groupby(["participant", "removal", "probetype", ]).mean(["correct"]).reset_index()
+
 
 # subselect
-df = mean_acc[(mean_acc.probetype != "novel") & (mean_acc.probetype != "replacement")]
+df = mean_acc[(mean_acc.probetype != "uncued") & (mean_acc.probetype != "replacement")] # & (mean_acc.probetype != "novel")]
 # df = mean_acc[mean_acc.operation == "replace"]
 
 pairwise = pg.pairwise_tests(data=df,
                              dv="correct",
-                             within=["probetype", "operation", ],    #
+                             within=["probetype", "operation", ],    # "operation"
                              subject="participant",
-                             padjust="bonf",
+                             padjust="fdr_bh" # "bonf",
                              )
 # pairwise.to_csv("pairwise.csv", index=False)
 
@@ -308,7 +324,8 @@ pairwise = pg.pairwise_tests(data=df,
 ########################################################################################################################
 # Look at RT
 # Examine anova
-anova = sm.stats.AnovaRM(data=master.mdf[(master.mdf.operation != "suppress") & (master.mdf.probetype != "novel") & (master.mdf.probetype != "replacement")],
+# aster.mdf[(master.mdf.operation != "suppress") & (master.mdf.probetype != "novel") & (master.mdf.probetype != "replacement")]
+anova = sm.stats.AnovaRM(data=master.mdf[(master.mdf.operation != "maintain") & (master.mdf.probetype != "uncued") & (master.mdf.probetype != "replacement")],
                          depvar="rt",
                          subject="participant",
                          within=["operation", "probetype"],
@@ -333,7 +350,7 @@ plt.show()
 # Graph operation on RT (figure)
 fontsize=14
 plt.figure(figsize=(6, 5))
-data = master.mdf[master.mdf.probetype != "novel"]
+data = master.mdf[master.mdf.probetype != "uncued"]
 y="rt"
 # axp = sns.violinplot(data=data,
 #                  y=y,
@@ -348,7 +365,7 @@ ax = sns.barplot(data=data,
                  y=y,
                  x="operation",
                  hue="probetype",
-                 hue_order=["cued", "uncued", "replacement"],
+                 hue_order=["cued", "novel",],    #  "replacement"
                  order=["maintain", "suppress", "replace"],
                  err_kws={"linewidth":1.5, "color":"black"},
                  capsize=0.2,
@@ -363,7 +380,7 @@ plot = sns.stripplot(data=data.groupby(["participant", "operation", "probetype",
                      hue="probetype",
                      dodge=True, size=2,
                      palette="dark:lightgray",
-                     hue_order=["cued", "uncued", "replacement"],
+                     hue_order=["cued", "novel",],    # "replacement"
                      native_scale=True,
                      )
 plt.xticks(fontsize=fontsize)
@@ -371,8 +388,12 @@ plt.yticks(fontsize=fontsize)
 plt.title("", fontsize=fontsize)
 plt.xlabel("Operation")
 plt.ylabel("RT", fontsize=fontsize+2)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
+ax.spines['left'].set_visible(False)
 plt.legend().remove()
-plt.savefig(f"{fig_dir}/oper_probetype_rt.svg")
+plt.savefig(f"{fig_dir}/oper_maninove_rt1.svg")
 plt.show()
 
 # average within participant
