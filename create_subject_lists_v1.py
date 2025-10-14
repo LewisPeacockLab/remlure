@@ -5,6 +5,7 @@ import numpy as np
 import os
 from collections import Counter
 import copy
+from itertools import permutations
 
 # Set participant number
 # need this to create a folder with each subs design matrix
@@ -133,102 +134,134 @@ run_len = 24    # trials per run
 num_runs = 6    # number of runs
 num_oper_per_run = run_len // 3    # 3 operations
 
-# create the encoding category labels for item 1 (left of screen) and item 2 (right of screen)
-encode_1_cat = (
-    ["faces"] * 4
-    + ["places"] * 4
-    + ["faces"] * 4
-    + ["fruits"] * 4
-    + ["places"] * 4
-    + ["fruits"] * 4
-) * 6
-encode_2_cat = (
-    ["places"] * 4
-    + ["faces"] * 4
-    + ["fruits"] * 4
-    + ["faces"] * 4
-    + ["fruits"] * 4
-    + ["places"] * 4
-) * 6
+## Create conditions structure
+# Define the experiment conditions
+cue_pos = ["left", "right"]
+operations = ["maintain", "suppress", "replace"]
+categories = ["faces", "places", "fruits"]
+probe_types = range(4)
 
-# intiate df
-mainTask_df = pd.DataFrame({"encode_1_cat": encode_1_cat, "encode_2_cat": encode_2_cat})
+# Create the conditions list
+conditions = [[(cat1, cat2, oper, probe)
+               for cat1, cat2 in permutations(categories, 2)
+               ]
+              for oper in operations
+              for probe in probe_types]
+conditions = np.array(conditions)     # shape=(12, 6, 4)
 
-# create lst of operations
-operation_list_run1 = (["maintain"] * 2 + ["suppress"] * 2 + ["replace"] * 2) * 4
-operation_list_run2 = (["suppress"] * 2 + ["replace"] * 2 + ["maintain"] * 2) * 4
-operation_list_run3 = (["replace"] * 2 + ["maintain"] * 2 + ["suppress"] * 2) * 4
-operation_list_run4 = (["maintain"] * 2 + ["suppress"] * 2 + ["replace"] * 2) * 4
-operation_list_run5 = (["suppress"] * 2 + ["replace"] * 2 + ["maintain"] * 2) * 4
-operation_list_run6 = (["replace"] * 2 + ["maintain"] * 2 + ["suppress"] * 2) * 4
+# concatenate within operation to create 3 arrays of 24 (shape=[3, 24, 4])
+combined_conds = np.array([np.vstack(conditions[:4]),
+                           np.vstack(conditions[4:8]),
+                           np.vstack(conditions[8:12])
+                           ])
 
-operation_list_allRuns = (
-    operation_list_run1
-    + operation_list_run2
-    + operation_list_run3
-    + operation_list_run4
-    + operation_list_run5
-    + operation_list_run6
-)
+# Create indices for the three conditions
+cond_inds = np.full((len(operations), run_len), np.nan)
+for i in range(run_len):
+    cond_inds[:, i] = np.roll(np.arange(3), (i % 3) + i // 3)
+# Randomly roll to create unique structure
+cond_inds = np.roll(cond_inds, np.random.randint(24), axis=1)
+# Use boolean indexing to separate out the three runs
+run_1_conds = combined_conds[cond_inds == 0]
+run_2_conds = combined_conds[cond_inds == 1]
+run_3_conds = combined_conds[cond_inds == 2]
 
-mainTask_df["operation"] = operation_list_allRuns
+# Run assertion checks to make sure that list creation ran properly
+for run, conds in enumerate([run_1_conds, run_2_conds, run_3_conds]):
+    # Check the categories
+    c = Counter([(r[0], r[1]) for r in conds])
+    # print(c)
+    assert all([cat in c.keys() for cat in permutations(categories, 2)]), \
+        "list creation failed to include all category pairs"
+    assert all([v == run_len // len(list(permutations(categories, 2))) for v in c.values()]), \
+        f"list creation failed to properly balance category pairs within run {run + 1}"
+    # Check the operations
+    c = Counter(conds[:, 2])
+    # print(c)
+    assert all([op in c.keys() for op in operations]), \
+        "list creation failed to include all operations"
+    assert all([v == run_len // len(operations) for v in c.values()]), \
+        f"list creation failed to properly balance operations within run {run + 1}"
 
-# set replacement category
-stim_cats = {"faces", "places", "fruits"}
+# Initialize the column order
+column_order = ["encode_1_cat", "encode_2_cat", "operation", "probe_type"]
+# Randomly permute the three runs for the first half and save into a dataframe
+conditions_df = pd.DataFrame(np.random.permutation([run_1_conds,
+                                                  run_2_conds,
+                                                  run_3_conds]).reshape((total_trials // 2, -1)),
+                           columns=column_order)
+
+# Add list of cue_position
+cuepos_arr = np.concatenate((np.zeros(len(conditions_df) // 2, dtype=int),
+                             np.ones(len(conditions_df) // 2, dtype=int)))
+# Randomize cue positions
+conditions_df["cue_position"] = np.random.permutation(cuepos_arr)
+# Create the conditions for the second half
+secondhalf_conditions = conditions_df.copy()
+# Flip the cue positions for the second half
+secondhalf_conditions["cue_position"] = 1 - secondhalf_conditions["cue_position"]
+# Randomize the run structure again in second half and append to ongoing dataframe
+for i in np.random.permutation(np.arange(3)):
+    conditions_df = pd.concat((conditions_df, secondhalf_conditions.iloc[24*i : 24*(i+1)]),
+                              ignore_index=True)
+
+# Add run_num
+conditions_df["run_num"] = [n + 1 for n in range(num_runs) for i in range(run_len)]
 
 
-def find_replace_cat(row):
-    if row["operation"] == "replace":
-        present = {row["encode_1_cat"], row["encode_2_cat"]}
-        missing = stim_cats - present
-        return missing.pop() if missing else "NA"
-    else:
-        return "NA"
+## Pseudorandomize trials within runs and append to mainTask dataframe
+# initialize mainTask df
+mainTask_df = pd.DataFrame()
+
+# this code is to make sure there are no more than 3 of the same operation repeated in a row
+for i in range(1, num_runs+1):
+    # subselect the run dataframe
+    run_df = conditions_df[conditions_df["run_num"] == i]
+    wm_valid_sequence = False
+    while not wm_valid_sequence:
+        # resample the trials within this run
+        run_df = run_df.sample(frac=1).reset_index(drop=True)
+        # check the operation structures
+        wm_valid_sequence = not any((run_df['operation'] == run_df['operation'].shift(1)) &
+                                    (run_df['operation'] == run_df['operation'].shift(2)) &
+                                    (run_df['operation'] == run_df['operation'].shift(3)))
+    # Concat the now shuffled run into the main task dataframe
+    mainTask_df = pd.concat((mainTask_df, run_df), ignore_index=True)
 
 
-mainTask_df["replace_cat"] = mainTask_df.apply(find_replace_cat, axis=1)
+## recode the conditions into variable names used in PsychoPy
+# recode cue_position
+mainTask_df["cue_position"] = ["right" if cp else "left" for cp in mainTask_df.cue_position]
 
-# set cue location
-mainTask_cue_loc = (["left" for i in range(1)] + ["right" for i in range(1)]) * 72
-mainTask_df["cue_position"] = mainTask_cue_loc
-
-# set trial num
-mainTask_trial_num = list(range(1, 25)) * 6
-mainTask_df["trial_num"] = mainTask_trial_num
-
+# Convert the probe_type to int type
+mainTask_df["probe_type"] = mainTask_df["probe_type"].astype(int)
 # set probe sub-type
 maintain_probes = ["cued", "uncued", "novel", "novel"]
 replace_probes = ["lure", "replacement", "uncued", "novel"]
 suppress_probes = ["lure", "uncued", "uncued", "novel"]
-# iterate through dataframe to add probe_subtypes
 probe_subtype = []
-for i, row in mainTask_df.iterrows():
-    # print(i)
-    if row["trial_num"] == 1:
-        # num_probes * (run_len // (num_probes * num_operations))
-        run_maintain_probes = np.random.permutation(maintain_probes * (num_oper_per_run // len(maintain_probes))).tolist()
-        run_replace_probes = np.random.permutation(replace_probes * (num_oper_per_run // len(replace_probes))).tolist()
-        run_suppress_probes = np.random.permutation(suppress_probes * (num_oper_per_run // len(suppress_probes))).tolist()
-    if row["operation"] == "maintain":
-        probe_subtype.append(run_maintain_probes.pop())
-    elif row["operation"] == "replace":
-        probe_subtype.append(run_replace_probes.pop())
-    elif row["operation"] == "suppress":
-        probe_subtype.append(run_suppress_probes.pop())
-# add column to dataframe
+for i, r in mainTask_df.iterrows():
+    if r.operation == "maintain":
+        probe_subtype.append(maintain_probes[r.probe_type])
+    elif r.operation == "suppress":
+        probe_subtype.append(suppress_probes[r.probe_type])
+    elif r.operation == "replace":
+        probe_subtype.append(replace_probes[r.probe_type])
 mainTask_df["probe_subtype"] = probe_subtype
 
-# set run number
-mainTask_run_num = (
-    [1 for i in range(24)]
-    + [2 for i in range(24)]
-    + [3 for i in range(24)]
-    + [4 for i in range(24)]
-    + [5 for i in range(24)]
-    + [6 for i in range(24)]
-)
-mainTask_df["run_num"] = mainTask_run_num
+# set replacement category
+def find_replace_cat(row):
+    if row["operation"] == "replace":
+        present = {row["encode_1_cat"], row["encode_2_cat"]}
+        missing = set(categories) - present
+        return missing.pop() if missing else "NA"
+    else:
+        return "NA"
+mainTask_df["replace_cat"] = mainTask_df.apply(find_replace_cat, axis=1)
 
+# set trial num
+mainTask_trial_num = list(range(1, 25)) * 6
+mainTask_df["trial_num"] = mainTask_trial_num
 
 # Add jitter, randomized within run
 jitter = []
